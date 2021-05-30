@@ -2,19 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import stars from "../assets/background-stars.svg";
 
 const GlobalStyle = createGlobalStyle`
-html {
-  --color-white: 0, 0%, 100%;
-  --color-background: #070724;
-  --color-mercury: #419EBB;
-  --color-venus: #EDA249;
-  --color-earth: #6f2ed6;
-  --color-mars: #D14C32;
-  --color-jupiter: #D83A34;
-  --color-saturn: #CD5120;
-  --color-neptune: #1ec2a4;
-  --color-pluto: #2d68f0;
-}
-
 *,
 *::before,
 *::after {
@@ -33,7 +20,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: 'Spartan', sans-serif;
+  font-family: var(--font-family);
   background-color: var(--color-background);
   background-image: url(${stars});
   color: hsl(var(--color-white));
@@ -87,6 +74,26 @@ button {
     scroll-behavior: auto !important;
   }
 }
-`;
 
+//CSS VARIABLES
+:root {
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-light: 400;
+
+  --font-family: 'Spartan', sans-serif;
+  --font-family-antonio: 'Antonio', sans-serif;
+
+  --color-white: 0, 0%, 100%;
+  --color-background: #070724;
+  --color-mercury: #DEF4FC;
+  --color-venus: #F7CC7F;
+  --color-earth: #545BFE;
+  --color-mars: #FF6A45;
+  --color-jupiter: #ECAD7A;
+  --color-saturn: #FCCB6B;
+  --color-uranus: #65F0D5;
+  --color-neptune: #2d68f0;
+}
+`;
 export default GlobalStyle;

@@ -1,8 +1,9 @@
 import { createGlobalStyle } from "styled-components";
+import stars from "../assets/background-stars.svg";
 
 const GlobalStyle = createGlobalStyle`
 html {
-  --color-text: #FFF;
+  --color-white: 0, 0%, 100%;
   --color-background: #070724;
   --color-mercury: #419EBB;
   --color-venus: #EDA249;
@@ -22,12 +23,6 @@ html {
   padding: 0;
 }
 
-/* Remove list styles on ul, ol elements which suggests default styling will be removed */
-ul,
-ol {
-  list-style: none;
-}
-
 /* Set core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
@@ -39,13 +34,21 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: 'Spartan', sans-serif;
-  background: var(--color-background);
-  color: var(--color-text);
+  background-color: var(--color-background);
+  background-image: url(${stars});
+  color: hsl(var(--color-white));
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
+/* Remove list styles on ul, ol elements which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+a {
   text-decoration-skip-ink: auto;
+  text-decoration: none;
+  color: var(--color-white);
 }
 
 /* Make images easier to work with */
@@ -61,6 +64,12 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */

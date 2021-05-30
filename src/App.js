@@ -1,6 +1,6 @@
 import React from "react";
 import MainWrapper from "./components/MainWrapper";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import GlobalStyle from "./styles/Globalstyles";
 
 function App() {

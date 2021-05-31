@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import stars from "../assets/background-stars.svg";
+import { COLORS } from "../shared/constants";
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -75,7 +76,6 @@ button {
   }
 }
 
-//CSS VARIABLES
 :root {
   --font-weight-bold: 700;
   --font-weight-medium: 500;
@@ -84,16 +84,16 @@ button {
   --font-family: 'Spartan', sans-serif;
   --font-family-antonio: 'Antonio', sans-serif;
 
-  --color-white: 0, 0%, 100%;
-  --color-background: #070724;
-  --color-mercury: #DEF4FC;
-  --color-venus: #F7CC7F;
-  --color-earth: #545BFE;
-  --color-mars: #FF6A45;
-  --color-jupiter: #ECAD7A;
-  --color-saturn: #FCCB6B;
-  --color-uranus: #65F0D5;
-  --color-neptune: #2d68f0;
+  --color-white: ${COLORS.primary};
+  --color-background: ${COLORS.secondary};
+  --color-mercury-menu: ${COLORS.mercury.menu};
+  --color-venus-menu: ${COLORS.venus.menu};
+  --color-earth-menu: ${COLORS.earth.menu};
+  --color-mars-menu: ${COLORS.mars.menu};
+  --color-jupiter-menu: ${COLORS.jupiter.menu};
+  --color-saturn-menu: ${COLORS.saturn.menu};
+  --color-uranus-menu: ${COLORS.uranus.menu};
+  --color-neptune-menu:${COLORS.neptune.menu};
 }
 `;
 export default GlobalStyle;

@@ -25,6 +25,7 @@ body {
   background-color: var(--color-background);
   background-image: url(${stars});
   color: hsl(var(--color-white));
+  background-position: left 50% top 30%;
 }
 
 /* Remove list styles on ul, ol elements which suggests default styling will be removed */
@@ -84,8 +85,13 @@ button {
   --font-family: 'Spartan', sans-serif;
   --font-family-antonio: 'Antonio', sans-serif;
 
+  --transition: .2s ease;
+
+  
   --color-white: ${COLORS.primary};
   --color-background: ${COLORS.secondary};
+
+  //MOBILE
   --color-mercury-menu: ${COLORS.mercury.menu};
   --color-venus-menu: ${COLORS.venus.menu};
   --color-earth-menu: ${COLORS.earth.menu};
@@ -94,6 +100,16 @@ button {
   --color-saturn-menu: ${COLORS.saturn.menu};
   --color-uranus-menu: ${COLORS.uranus.menu};
   --color-neptune-menu:${COLORS.neptune.menu};
+
+  //MAIN
+  --color-mercury-main: ${COLORS.mercury.main};
+  --color-venus-main: ${COLORS.venus.main};
+  --color-earth-main: ${COLORS.earth.main};
+  --color-mars-main: ${COLORS.mars.main};
+  --color-jupiter-main: ${COLORS.jupiter.main};
+  --color-saturn-main: ${COLORS.saturn.main};
+  --color-uranus-main: ${COLORS.uranus.main};
+  --color-neptune-main:${COLORS.neptune.main};
 }
 `;
 export default GlobalStyle;

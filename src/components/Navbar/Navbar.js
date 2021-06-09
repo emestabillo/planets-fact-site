@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ReactComponent as Hamburger } from "../../assets/icon-hamburger.svg";
 import { ReactComponent as Chevron } from "../../assets/icon-chevron.svg";
 import { QUERIES } from "../../shared/constants";
+import { baseUnderline } from "../../shared/helpers";
 import PlanetsData from "../../data/data.json";
 
 const Nav = styled.nav`
@@ -130,18 +131,19 @@ const NavItems = styled.li`
 `;
 
 const PlanetLinks = styled.a`
+  ${baseUnderline}
   font-size: 0.9375rem;
   font-weight: var(--font-weight-bold);
   line-height: 1.5625rem;
   letter-spacing: 0.1rem;
   display: flex;
   align-items: center;
-  opacity: 0.75;
-  transition: opacity var(--transition);
+  /* opacity: 0.75;
+  transition: opacity var(--transition); */
 
-  &:hover {
+  /* &:hover {
     opacity: 1;
-  }
+  } */
 
   @media ${QUERIES.tabletAndUp} {
     font-size: 0.6875rem;
@@ -154,7 +156,6 @@ const PlanetLinks = styled.a`
       width: 100%;
       height: 0.25rem;
       bottom: -1.6rem;
-      width: 0;
       opacity: 0;
       transition: width 0.2s ease;
       background-color: ${({ index }) => {
@@ -178,10 +179,10 @@ const PlanetLinks = styled.a`
       }};
     }
 
-    &:hover::before {
+    /* &:hover::before {
       opacity: 1;
       width: 100%;
-    }
+    } */
   }
 
   @media ${QUERIES.desktopAndUp} {

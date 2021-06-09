@@ -186,7 +186,7 @@ const PlanetLinks = styled.a`
 
   @media ${QUERIES.desktopAndUp} {
     &::before {
-      top: -2.1rem;
+      top: -2.064rem;
       bottom: revert;
     }
   }
@@ -223,7 +223,7 @@ const Circles = styled.span`
   }
 `;
 
-const Arrow = styled.button`
+const Arrow = styled(Chevron)`
   margin-left: auto;
 `;
 
@@ -244,11 +244,9 @@ function Navbar() {
           return (
             <NavItems key={index}>
               <PlanetLinks href="/" index={index}>
-                <Circles index={index}></Circles>
+                <Circles aria-label="hidden" index={index}></Circles>
                 {planet}
-                <Arrow>
-                  <Chevron />
-                </Arrow>
+                <Arrow aria-label="hidden" />
               </PlanetLinks>
             </NavItems>
           );

@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.main`
-  padding: 1.5625rem 6%;
-`;
+const Wrapper = styled.main``;
 
 function MainWrapper({ children }) {
   return <Wrapper>{children}</Wrapper>;

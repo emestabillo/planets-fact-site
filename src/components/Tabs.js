@@ -1,12 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { baseUnderline } from "../shared/helpers";
+import { Wrapper } from "./Container";
 
-const Wrapper = styled.div`
+const FlexContainer = styled(Wrapper)`
   display: flex;
   justify-content: space-between;
+  padding-bottom: 0;
   border-bottom: 1px solid hsla(var(--color-white), 20%);
 `;
+// const Wrapper = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   border-bottom: 1px solid hsla(var(--color-white), 20%);
+// `;
 
 const Tab = styled.button`
   ${baseUnderline}
@@ -26,11 +33,11 @@ const Tab = styled.button`
 
 function Tabs() {
   return (
-    <Wrapper>
+    <FlexContainer>
       <Tab>Overview</Tab>
       <Tab>Structure</Tab>
       <Tab>Surface</Tab>
-    </Wrapper>
+    </FlexContainer>
   );
 }
 

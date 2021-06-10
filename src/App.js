@@ -1,7 +1,7 @@
 import React from "react";
 import MainWrapper from "./components/MainWrapper";
 import Navbar from "./components/Navbar/Navbar";
-import Tabs from "./components/Tabs";
+import Mercury from "./pages/Mercury";
 import GlobalStyle from "./shared/Globalstyles";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <GlobalStyle />
       <Navbar />
       <MainWrapper>
-        <Tabs />
+        <Mercury />
       </MainWrapper>
     </>
   );

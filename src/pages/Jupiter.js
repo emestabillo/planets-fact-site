@@ -4,16 +4,15 @@ import data from "../data/data.json";
 import { ReactComponent as OverviewImg } from "../assets/planet-jupiter.svg";
 import { ReactComponent as Source } from "../assets/icon-source.svg";
 import Stats from "../components/Stats";
-import { Wrapper } from "../components/Container";
+// import { Wrapper } from "../components/Container";
 
 const Planet = data[4];
 
 const Jupiter = () => {
-  // const [selectedPlanet, setSelectedPlanet] = useState(0);
   const { name, overview, rotation, revolution, radius, temperature } = Planet;
-  console.log(Planet);
+
   return (
-    <Wrapper>
+    <>
       <Tabs />
       <OverviewImg />
       <div>
@@ -31,7 +30,7 @@ const Jupiter = () => {
         radius={radius}
         temperature={temperature}
       />
-    </Wrapper>
+    </>
   );
 };
 

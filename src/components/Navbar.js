@@ -5,17 +5,19 @@ import { ReactComponent as Hamburger } from "../assets/icon-hamburger.svg";
 import { ReactComponent as Chevron } from "../assets/icon-chevron.svg";
 import { QUERIES } from "../shared/constants";
 import { baseUnderline } from "../shared/helpers";
+import { Gutters } from "../shared/helpers";
 import PlanetsData from "../data/data.json";
 
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   max-width: 85.625rem;
-  padding: 1.5625rem 6%;
+  padding: 1.5625rem;
   align-items: center;
   border-bottom: 1px solid hsla(var(--color-white), 20%);
   position: relative;
   z-index: 3;
+  ${Gutters}
 
   @media ${QUERIES.tabletAndUp} {
     flex-direction: column;
@@ -234,7 +236,7 @@ const navItems = PlanetsData.map((a) => a.name);
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
-  console.log(showMenu);
+
   return (
     <Nav>
       <LogoLink href="/">The planets</LogoLink>
@@ -245,7 +247,7 @@ function Navbar() {
         {navItems.map((planet, index) => {
           return (
             <NavItems key={index}>
-              <PlanetLinks to={`/${planet}`} index={index}>
+              <PlanetLinks to={`/${planet}`} onClick={toggleMenu} index={index}>
                 <Circles aria-label="hidden" index={index}></Circles>
                 {planet}
                 <Arrow aria-label="hidden" />

@@ -4,15 +4,15 @@ import data from "../data/data.json";
 import { ReactComponent as OverviewImg } from "../assets/planet-mercury.svg";
 import { ReactComponent as Source } from "../assets/icon-source.svg";
 import Stats from "../components/Stats";
-import { Wrapper } from "../components/Container";
+// import { Wrapper } from "../components/Container";
 
 const Planet = data[0];
 
 const Mercury = () => {
   const { name, overview, rotation, revolution, radius, temperature } = Planet;
-  console.log(Planet);
+
   return (
-    <Wrapper>
+    <>
       <Tabs />
       <OverviewImg />
       <div>
@@ -30,7 +30,7 @@ const Mercury = () => {
         radius={radius}
         temperature={temperature}
       />
-    </Wrapper>
+    </>
   );
 };
 

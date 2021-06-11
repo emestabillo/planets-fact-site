@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Gutters } from "../shared/helpers";
 
 const Wrapper = styled.main`
   text-align: center;

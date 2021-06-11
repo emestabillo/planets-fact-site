@@ -5,16 +5,15 @@ import data from "../data/data.json";
 import { ReactComponent as OverviewImg } from "../assets/planet-neptune.svg";
 import { ReactComponent as Source } from "../assets/icon-source.svg";
 import Stats from "../components/Stats";
-import { Wrapper } from "../components/Container";
+// import { Wrapper } from "../components/Container";
 
 const Planet = data[7];
 
 const Neptune = () => {
-  // const [selectedPlanet, setSelectedPlanet] = useState(0);
   const { name, overview, rotation, revolution, radius, temperature } = Planet;
-  console.log(Planet);
+
   return (
-    <Wrapper>
+    <>
       <Tabs />
       <OverviewImg />
       <div>
@@ -32,7 +31,7 @@ const Neptune = () => {
         radius={radius}
         temperature={temperature}
       />
-    </Wrapper>
+    </>
   );
 };
 

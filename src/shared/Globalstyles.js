@@ -87,7 +87,6 @@ button {
 
   --transition: .2s ease;
 
-  
   --color-white: ${COLORS.primary};
   --color-background: ${COLORS.secondary};
 

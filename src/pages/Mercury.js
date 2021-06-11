@@ -4,50 +4,37 @@ import Tabs from "../components/Tabs";
 import data from "../data/data.json";
 import { ReactComponent as OverviewImg } from "../assets/planet-mercury.svg";
 import { ReactComponent as Source } from "../assets/icon-source.svg";
+import Stats from "../components/Stats";
 
-const PlanetMercury = data[0];
-// const { name } = PlanetMercur                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     y[planet];
+const Planet = data[0];
 
-const Image = styled.div`
-  svg {
-    margin: 0 auto;
-    display: block;
-  }
-`;
+// const Image = styled.div`
+//   svg {
+//     margin: 0 auto;
+//     display: block;
+//   }
+// `;
 
 const Mercury = () => {
-  const [planet, setPlanet] = useState(0);
-  console.log(PlanetMercury);
+  const [selectedPlanet, setSelectedPlanet] = useState(0);
+  const { name, overview, rotation, revolution, radius, temperature } = Planet;
+  console.log(Planet);
   return (
-    <div>
+    <>
       <Tabs />
-      <Image>
-        <OverviewImg />
-      </Image>
+      <OverviewImg />
       <span>Source:</span>
-      <a href={PlanetMercury.overview.source}>Wikipedia</a>
+      <a href={overview.source}>Wikipedia</a>
       <Source />
-      <h1>{PlanetMercury.name}</h1>
-      <p>{PlanetMercury.overview.content}</p>
-      <ul>
-        <li>
-          <span>Rotation time</span>
-          <span>{PlanetMercury.rotation}</span>
-        </li>
-        <li>
-          <span>Revolution time</span>
-          <span>{PlanetMercury.revolution}</span>
-        </li>
-        <li>
-          <span>Radius</span>
-          <span>{PlanetMercury.radius}</span>
-        </li>
-        <li>
-          <span>Average temp</span>
-          <span>{PlanetMercury.temperature}</span>
-        </li>
-      </ul>
-    </div>
+      <h1>{name}</h1>
+      <p>{overview.content}</p>
+      <Stats
+        rotation={rotation}
+        revolution={revolution}
+        radius={radius}
+        temperature={temperature}
+      />
+    </>
   );
 };
 

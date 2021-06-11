@@ -6,7 +6,7 @@ import { ReactComponent as Source } from "../assets/icon-source.svg";
 import Stats from "../components/Stats";
 // import { Wrapper } from "../components/Container";
 
-const Planet = data[6];
+const Planet = data[5];
 
 const Saturn = () => {
   const { name, overview, rotation, revolution, radius, temperature } = Planet;

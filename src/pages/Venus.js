@@ -4,7 +4,7 @@ import data from "../data/data.json";
 import { ReactComponent as OverviewImg } from "../assets/planet-venus.svg";
 import { ReactComponent as Source } from "../assets/icon-source.svg";
 import Stats from "../components/Stats";
-import { Wrapper } from "../components/Container";
+// import { Wrapper } from "../components/Container";
 
 const Planet = data[1];
 
@@ -13,7 +13,7 @@ const Venus = () => {
   const { name, overview, rotation, revolution, radius, temperature } = Planet;
   console.log(Planet);
   return (
-    <Wrapper>
+    <>
       <Tabs />
       <OverviewImg />
       <div>
@@ -31,7 +31,7 @@ const Venus = () => {
         radius={radius}
         temperature={temperature}
       />
-    </Wrapper>
+    </>
   );
 };
 

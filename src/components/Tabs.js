@@ -6,8 +6,8 @@ import { Gutters } from "../shared/helpers";
 const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-bottom: 0;
   border-bottom: 1px solid hsla(var(--color-white), 20%);
+  margin: 0 -7%;
   ${Gutters}
 `;
 

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ReactComponent as Hamburger } from "../../assets/icon-hamburger.svg";
-import { ReactComponent as Chevron } from "../../assets/icon-chevron.svg";
-import { QUERIES } from "../../shared/constants";
-import { baseUnderline } from "../../shared/helpers";
-import PlanetsData from "../../data/data.json";
+import { ReactComponent as Hamburger } from "../assets/icon-hamburger.svg";
+import { ReactComponent as Chevron } from "../assets/icon-chevron.svg";
+import { QUERIES } from "../shared/constants";
+import { baseUnderline } from "../shared/helpers";
+import PlanetsData from "../data/data.json";
 
 const Nav = styled.nav`
   display: flex;
@@ -44,10 +44,10 @@ const LogoLink = styled.a`
 
 const MenuButton = styled.button`
   padding-top: 0.3125rem;
-  /* svg {
+  svg {
     fill: ${({ showMenu }) =>
-    showMenu ? "hsla(var(--color-white), 25%)" : "hsl(var(--color-white))"};
-  } */
+      showMenu ? "hsla(var(--color-white), 25%)" : "hsl(var(--color-white))"};
+  }
   &:hover,
   &:focus {
     svg {

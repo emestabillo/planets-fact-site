@@ -1,4 +1,3 @@
-// import React, { useState } from "react";
 import React from "react";
 import Tabs from "../components/Tabs";
 import data from "../data/data.json";
@@ -10,7 +9,6 @@ import { Wrapper } from "../components/Container";
 const Planet = data[0];
 
 const Mercury = () => {
-  // const [selectedPlanet, setSelectedPlanet] = useState(0);
   const { name, overview, rotation, revolution, radius, temperature } = Planet;
   console.log(Planet);
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import GlobalStyle from "./shared/Globalstyles";
 import MainWrapper from "./components/MainWrapper";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 import Mercury from "./pages/Mercury";
 import Venus from "./pages/Venus";
 import Earth from "./pages/Earth";

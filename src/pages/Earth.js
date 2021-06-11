@@ -1,15 +1,14 @@
-// import React, { useState } from "react";
 import React from "react";
 import Tabs from "../components/Tabs";
 import data from "../data/data.json";
-import { ReactComponent as OverviewImg } from "../assets/planet-mercury.svg";
+import { ReactComponent as OverviewImg } from "../assets/planet-earth.svg";
 import { ReactComponent as Source } from "../assets/icon-source.svg";
 import Stats from "../components/Stats";
 import { Wrapper } from "../components/Container";
 
-const Planet = data[0];
+const Planet = data[2];
 
-const Mercury = () => {
+const Earth = () => {
   // const [selectedPlanet, setSelectedPlanet] = useState(0);
   const { name, overview, rotation, revolution, radius, temperature } = Planet;
   console.log(Planet);
@@ -36,4 +35,4 @@ const Mercury = () => {
   );
 };
 
-export default Mercury;
+export default Earth;

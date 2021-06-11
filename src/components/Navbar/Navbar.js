@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { ReactComponent as Hamburger } from "../../assets/icon-hamburger.svg";
 import { ReactComponent as Chevron } from "../../assets/icon-chevron.svg";
 import { QUERIES } from "../../shared/constants";
@@ -130,7 +131,7 @@ const NavItems = styled.li`
   }
 `;
 
-const PlanetLinks = styled.a`
+const PlanetLinks = styled(Link)`
   ${baseUnderline}
   font-size: 0.9375rem;
   font-weight: var(--font-weight-bold);
@@ -244,7 +245,7 @@ function Navbar() {
         {navItems.map((planet, index) => {
           return (
             <NavItems key={index}>
-              <PlanetLinks href="/" index={index}>
+              <PlanetLinks to={`/${planet}`} index={index}>
                 <Circles aria-label="hidden" index={index}></Circles>
                 {planet}
                 <Arrow aria-label="hidden" />

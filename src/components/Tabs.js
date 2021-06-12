@@ -4,6 +4,7 @@ import { baseUnderline } from "../shared/helpers";
 import { Gutters } from "../shared/helpers";
 
 const FlexContainer = styled.div`
+  grid-area: tabs;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid hsla(var(--color-white), 20%);

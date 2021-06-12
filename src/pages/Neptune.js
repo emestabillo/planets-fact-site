@@ -3,28 +3,18 @@ import styled from "styled-components";
 import Tabs from "../components/Tabs";
 import data from "../data/data.json";
 import { ReactComponent as OverviewImg } from "../assets/planet-neptune.svg";
-import { ReactComponent as Source } from "../assets/icon-source.svg";
+import Header from "../components/Header";
 import Stats from "../components/Stats";
-// import { Wrapper } from "../components/Container";
 
 const Planet = data[7];
 
-const Neptune = () => {
+function Neptune() {
   const { name, overview, rotation, revolution, radius, temperature } = Planet;
-
   return (
     <>
+      <Header name={name} overview={overview} />
       <Tabs />
       <OverviewImg />
-      <div>
-        <h1>{name}</h1>
-        <p>{overview.content}</p>
-        <div>
-          <span>Source: </span>
-          <a href={overview.source}>Wikipedia</a>
-          <Source />
-        </div>
-      </div>
       <Stats
         rotation={rotation}
         revolution={revolution}
@@ -33,6 +23,6 @@ const Neptune = () => {
       />
     </>
   );
-};
+}
 
 export default Neptune;

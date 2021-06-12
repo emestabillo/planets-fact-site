@@ -65,13 +65,13 @@ const MenuButton = styled.button`
 const NavList = styled.ul`
   position: fixed;
   z-index: 10;
-  top: 8.75rem;
+  top: 5.8125rem;
   width: 100vw;
   height: 100vh;
   background-color: var(--color-background);
   left: 0;
   padding: 0 6%;
-  transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
+  transition: transform 0.5s cubic-bezier(0, 0.52, 0, 1);
   transform: ${({ showMenu }) =>
     showMenu ? "translate3d(0vw, 0, 0)" : "translate3d(-100vw, 0, 0)"};
 

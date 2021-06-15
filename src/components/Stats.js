@@ -4,6 +4,8 @@ import styled from "styled-components";
 const List = styled.ul`
   padding-top: 1.75rem;
   text-transform: uppercase;
+  grid-area: stats;
+
   & > * + * {
     margin-top: 0.5rem;
   }

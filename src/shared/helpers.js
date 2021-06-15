@@ -24,3 +24,8 @@ export const baseUnderline = css`
     width: 100%;
   }
 `;
+
+export const Gutters = css`
+  padding-left: 6%;
+  padding-right: 6%;
+`;

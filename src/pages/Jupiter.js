@@ -1,29 +1,21 @@
 import React from "react";
 import Tabs from "../components/Tabs";
-import data from "../data/data.json";
+import { PlanetsData } from "../data/data";
 import { ReactComponent as OverviewImg } from "../assets/planet-jupiter.svg";
-import { ReactComponent as Source } from "../assets/icon-source.svg";
+import overviewImg from "../assets/planet-saturn.svg";
+import Header from "../components/Header";
 import Stats from "../components/Stats";
-import { Wrapper } from "../components/Container";
 
-const Planet = data[4];
+const Planet = PlanetsData[4];
+const { name, overview, rotation, revolution, radius, temperature } = Planet;
 
-const Jupiter = () => {
-  // const [selectedPlanet, setSelectedPlanet] = useState(0);
-  const { name, overview, rotation, revolution, radius, temperature } = Planet;
-  console.log(Planet);
+function Jupiter() {
   return (
-    <Wrapper>
+    <>
+      <Header name={name} overview={overview} />
       <Tabs />
-      <OverviewImg />
       <div>
-        <h1>{name}</h1>
-        <p>{overview.content}</p>
-        <div>
-          <span>Source: </span>
-          <a href={overview.source}>Wikipedia</a>
-          <Source />
-        </div>
+        <img src={overviewImg} alt={`${name} geology`} />
       </div>
       <Stats
         rotation={rotation}
@@ -31,8 +23,8 @@ const Jupiter = () => {
         radius={radius}
         temperature={temperature}
       />
-    </Wrapper>
+    </>
   );
-};
+}
 
 export default Jupiter;

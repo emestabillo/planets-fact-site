@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4b0d0ec7-71af-4e04-9590-5615f77d8b53/deploy-status)](https://app.netlify.com/sites/planets-fact-site/deploys)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

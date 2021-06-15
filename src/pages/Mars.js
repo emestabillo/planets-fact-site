@@ -1,15 +1,14 @@
 import React from "react";
 import Tabs from "../components/Tabs";
-import data from "../data/data.json";
+import { PlanetsData } from "../data/data";
 import { ReactComponent as OverviewImg } from "../assets/planet-mars.svg";
 import Header from "../components/Header";
 import Stats from "../components/Stats";
 
-const Planet = data[3];
+const Planet = PlanetsData[3];
+const { name, overview, rotation, revolution, radius, temperature } = Planet;
 
-const Mars = () => {
-  const { name, overview, rotation, revolution, radius, temperature } = Planet;
-
+function Mars() {
   return (
     <>
       <Header name={name} overview={overview} />
@@ -23,6 +22,6 @@ const Mars = () => {
       />
     </>
   );
-};
+}
 
 export default Mars;

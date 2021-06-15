@@ -1,21 +1,22 @@
 import React from "react";
 import Tabs from "../components/Tabs";
-import data from "../data/data.json";
+import { PlanetsData } from "../data/data";
 import { ReactComponent as OverviewImg } from "../assets/planet-earth.svg";
 import overviewImg from "../assets/planet-earth.svg";
 import Header from "../components/Header";
 import Stats from "../components/Stats";
 
-const Planet = data[2];
+const Planet = PlanetsData[2];
+const { name, overview, rotation, revolution, radius, temperature, images } =
+  Planet;
 
-const Earth = () => {
-  const { name, overview, rotation, revolution, radius, temperature } = Planet;
+function Earth() {
   return (
     <>
       <Header name={name} overview={overview} />
       <Tabs />
       <div>
-        <img src={overviewImg} alt={`${name} geology`} />
+        <img src={images.planet} alt={`${name} geology`} />
       </div>
       <Stats
         rotation={rotation}
@@ -25,6 +26,6 @@ const Earth = () => {
       />
     </>
   );
-};
+}
 
 export default Earth;

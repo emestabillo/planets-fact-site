@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ReactComponent as Hamburger } from "../assets/icon-hamburger.svg";
@@ -6,7 +6,7 @@ import { ReactComponent as Chevron } from "../assets/icon-chevron.svg";
 import { QUERIES } from "../shared/constants";
 import { baseUnderline } from "../shared/helpers";
 import { Gutters } from "../shared/helpers";
-import PlanetsData from "../data/data.json";
+import { PlanetsData } from "../data/data";
 
 const Nav = styled.nav`
   display: flex;
@@ -46,10 +46,10 @@ const LogoLink = styled.a`
 
 const MenuButton = styled.button`
   padding-top: 0.3125rem;
-  svg {
+  /* svg {
     fill: ${({ showMenu }) =>
-      showMenu ? "hsla(var(--color-white), 25%)" : "hsl(var(--color-white))"};
-  }
+    showMenu ? "hsla(var(--color-white), 25%)" : "hsl(var(--color-white))"};
+  } */
   &:hover,
   &:focus {
     svg {
@@ -63,11 +63,10 @@ const MenuButton = styled.button`
 `;
 
 const NavList = styled.ul`
-  position: fixed;
+  position: absolute;
   z-index: 10;
-  top: 5.8125rem;
+  top: 6.8125rem;
   width: 100vw;
-  height: 100vh;
   background-color: var(--color-background);
   left: 0;
   padding: 0 6%;
@@ -236,6 +235,11 @@ const navItems = PlanetsData.map((a) => a.name);
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
+
+  // useEffect(() => {
+  //   const body = document.querySelector("body");
+  //   body.style.overflow = showMenu ? "hidden" : "auto";
+  // }, [showMenu]);
 
   return (
     <Nav>

@@ -1,14 +1,14 @@
 import React from "react";
 import Tabs from "../components/Tabs";
-import data from "../data/data.json";
+import { PlanetsData } from "../data/data";
 import { ReactComponent as OverviewImg } from "../assets/planet-mercury.svg";
 import Header from "../components/Header";
 import Stats from "../components/Stats";
 
-const Planet = data[0];
+const Planet = PlanetsData[0];
+const { name, overview, rotation, revolution, radius, temperature } = Planet;
 
-const Mercury = () => {
-  const { name, overview, rotation, revolution, radius, temperature } = Planet;
+function Mercury() {
   return (
     <>
       <Header name={name} overview={overview} />
@@ -22,6 +22,6 @@ const Mercury = () => {
       />
     </>
   );
-};
+}
 
 export default Mercury;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import Link from "next/link";
 // import  Hamburger  from "../assets/icon-hamburger.svg";
 // import  Chevron  from "../assets/chevron.svg";
 import { QUERIES } from "../shared/constants";
@@ -10,7 +11,7 @@ import { PlanetData } from "../data/planets";
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  max-width: 85.625rem;
+  /* max-width: 85.625rem; */
   padding: 1.5625rem;
   align-items: center;
   border-bottom: 1px solid hsla(var(--color-white), 20%);
@@ -139,6 +140,7 @@ const PlanetLinks = styled.a`
   letter-spacing: 0.1rem;
   display: flex;
   align-items: center;
+  cursor: pointer;
   /* opacity: 0.75;
   transition: opacity var(--transition); */
 
@@ -243,16 +245,16 @@ function Navbar() {
   return (
     <Nav>
       <LogoLink href="/">The planets</LogoLink>
-      <MenuButton onClick={toggleMenu}>{/* <Hamburger /> */}</MenuButton>
       <NavList showMenu={showMenu}>
         {navItems.map((planet, index) => {
           return (
             <NavItems key={index}>
-              <PlanetLinks to={`/${planet}`} onClick={toggleMenu} index={index}>
-                <Circles aria-label="hidden" index={index}></Circles>
-                {planet}
-                {/* <Arrow aria-label="hidden" /> */}
-              </PlanetLinks>
+              <Link href={`/${planet}`} onClick={toggleMenu} index={index}>
+                <PlanetLinks index={index}>
+                  <Circles aria-label="hidden" index={index}></Circles>
+                  {planet}
+                </PlanetLinks>
+              </Link>
             </NavItems>
           );
         })}

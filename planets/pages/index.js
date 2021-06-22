@@ -1,7 +1,8 @@
 import Head from "next/head";
-import MainWrapper from "../components/MainWrapper";
-import Navbar from "../components/Navbar";
+import Planet from "../pages/[planet]";
 import { PlanetData } from "../data/planets";
+
+const planet = PlanetData.find((planet) => planet.name === "Earth");
 
 export default function Home() {
   return (
@@ -10,8 +11,7 @@ export default function Home() {
         <title>Planets!</title>
         <meta name="description" content="facts about planets" />
       </Head>
-      <Navbar />
-      <MainWrapper />
+      <Planet planet={planet} />
     </>
   );
 }

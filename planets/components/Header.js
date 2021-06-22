@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Source } from "../assets/icon-source.svg";
+// import { ReactComponent as Source } from "../assets/icon-source.svg";
 
 const Wrapper = styled.header`
   grid-area: header;
@@ -26,7 +26,7 @@ function Header({ name, overview }) {
       <div>
         <span>Source: </span>
         <a href={overview.source}>Wikipedia</a>
-        <Source />
+        {/* <Source /> */}
       </div>
     </Wrapper>
   );

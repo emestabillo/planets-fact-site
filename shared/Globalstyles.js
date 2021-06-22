@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import stars from "../assets/background-stars.svg";
+// import stars from "../assets/background-stars.svg";
 import { COLORS } from "../shared/constants";
 
 const GlobalStyle = createGlobalStyle`
@@ -23,7 +23,7 @@ body {
   line-height: 1.5;
   font-family: var(--font-family);
   background-color: var(--color-background);
-  background-image: url(${stars});
+  // background-image: url(${stars});
   color: hsl(var(--color-white));
   background-position: left 50% top 30%;
 }

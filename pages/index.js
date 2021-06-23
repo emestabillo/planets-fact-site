@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Planet from "../pages/[planet]";
 import { PlanetData } from "../data/planets";
+import Planet from "../pages/[planet]";
 
 const planet = PlanetData.find((planet) => planet.name === "Earth");
 

@@ -19,8 +19,8 @@ export default function Planet({ planet }) {
   const { name, overview, revolution, rotation, temperature, radius } = planet;
   return (
     <>
-      <Tabs />
       <Header name={name} overview={overview} />
+      <Tabs />
       <Stats
         revolution={revolution}
         temperature={temperature}

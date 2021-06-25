@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { baseUnderline } from "../shared/helpers";
 import { Gutters } from "../shared/helpers";
@@ -27,12 +28,31 @@ const Tab = styled.button`
   }
 `;
 
+const buttons = ["Overview", "Structure", "Geology"];
+
 function Tabs() {
+  const [active, setActive] = useState(buttons[0]);
+
+  let But;
+  if (active === "Overview") {
+    But = <p>Overview</p>;
+  } else if (active === "Structure") {
+    But = <p>STructure</p>;
+  } else {
+    But = <p>geology</p>;
+  }
   return (
     <FlexContainer>
-      <Tab>Overview</Tab>
-      <Tab>Structure</Tab>
-      <Tab>Surface</Tab>
+      {buttons.map((type) => (
+        <Tab
+          key={type}
+          active={active === type}
+          onClick={() => setActive(type)}
+        >
+          {type}
+          {But}
+        </Tab>
+      ))}
     </FlexContainer>
   );
 }

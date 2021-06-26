@@ -1,15 +1,11 @@
-import GlobalStyle from "../shared/Globalstyles";
-import MainWrapper from "../components/MainWrapper";
-import Navbar from "../components/Navbar";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <GlobalStyle />
-      <Navbar />
-      <MainWrapper>
+      <Layout>
         <Component {...pageProps} />
-      </MainWrapper>
+      </Layout>
     </>
   );
 }

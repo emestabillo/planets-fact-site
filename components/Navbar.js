@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-// import  Hamburger  from "../assets/icon-hamburger.svg";
-// import  Chevron  from "../assets/chevron.svg";
 import { QUERIES } from "../shared/constants";
 import { baseUnderline } from "../shared/helpers";
 import { Gutters } from "../shared/helpers";
@@ -45,11 +43,13 @@ const LogoLink = styled.a`
 `;
 
 const MenuButton = styled.button`
+  margin-left: auto;
   padding-top: 0.3125rem;
-  /* svg {
-    fill: ${({ showMenu }) =>
-    showMenu ? "hsla(var(--color-white), 25%)" : "hsl(var(--color-white))"};
-  } */
+
+  svg {
+    height: 1.0625rem;
+  }
+
   &:hover,
   &:focus {
     svg {
@@ -245,6 +245,18 @@ function Navbar() {
   return (
     <Nav>
       <LogoLink href="/">The planets</LogoLink>
+      <MenuButton showMenu={showMenu}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="{24}"
+          height="{17}"
+          fill="#FFF"
+        >
+          <g fillRule="evenodd">
+            <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
+          </g>
+        </svg>
+      </MenuButton>
       <NavList showMenu={showMenu}>
         {navItems.map((planet, index) => {
           return (

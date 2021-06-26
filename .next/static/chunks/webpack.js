@@ -177,12 +177,12 @@
 /******/ 	
 /******/ 	/* webpack/runtime/get update manifest filename */
 /******/ 	!function() {
-/******/ 		__webpack_require__.hmrF = function() { return "static/webpack/" + __webpack_require__.h() + ".webpack.hot-update.json"; };
+/******/ 		__webpack_require__.hmrF = function() { return "static/webpack/" + __webpack_require__.h() + ".hot-update.json"; };
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "c9a6473f2374355d776a"; }
+/******/ 		__webpack_require__.h = function() { return "336270d629a695d0e783"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -281,11 +281,6 @@
 /******/ 			if (!module.children) module.children = [];
 /******/ 			return module;
 /******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/runtimeId */
-/******/ 	!function() {
-/******/ 		__webpack_require__.j = "webpack";
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/hot module replacement */
@@ -660,7 +655,7 @@
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	!function() {
-/******/ 		__webpack_require__.p = "/_next/";
+/******/ 		__webpack_require__.p = "";
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/react refresh */

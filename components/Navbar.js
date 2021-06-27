@@ -43,7 +43,6 @@ const LogoLink = styled.a`
 `;
 
 const MenuButton = styled.button`
-  margin-left: auto;
   padding-top: 0.3125rem;
 
   svg {
@@ -113,6 +112,7 @@ const NavItems = styled.li`
   }
 
   svg {
+    margin-left: auto;
     @media ${QUERIES.tabletAndUp} {
       display: none;
     }
@@ -245,14 +245,14 @@ function Navbar() {
   return (
     <Nav>
       <LogoLink href="/">The planets</LogoLink>
-      <MenuButton showMenu={showMenu}>
+      <MenuButton onClick={toggleMenu}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="{24}"
-          height="{17}"
+          width="24"
+          height="17"
           fill="#FFF"
         >
-          <g fillRule="evenodd">
+          <g fill-rule="evenodd">
             <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
           </g>
         </svg>
@@ -265,6 +265,19 @@ function Navbar() {
                 <PlanetLinks index={index}>
                   <Circles aria-label="hidden" index={index}></Circles>
                   {planet}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="6"
+                    height="8"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="none"
+                      stroke="#FFF"
+                      opacity=".4"
+                      d="M1 0l4 4-4 4"
+                    />
+                  </svg>
                 </PlanetLinks>
               </Link>
             </NavItems>

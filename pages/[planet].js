@@ -1,8 +1,8 @@
 import { PlanetData } from "../data/planets";
 import Header from "../components/Header";
-import Tabs from "../components/Tabs";
+// import Tabs from "../components/Tabs";
 import Stats from "../components/Stats";
-import PlanetImage from "../components/PlanetImage";
+// import PlanetImage from "../components/PlanetImage";
 
 export async function getStaticPaths() {
   const paths = PlanetData.map((planet) => ({
@@ -17,12 +17,29 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Planet({ planet }) {
-  const { name, overview, revolution, rotation, temperature, radius, images } =
-    planet;
+  const {
+    name,
+    overview,
+    images,
+    revolution,
+    rotation,
+    temperature,
+    radius,
+    structure,
+    geology,
+    active,
+  } = planet;
   return (
     <>
-      <Header name={name} overview={overview} />
-      <Tabs images={images} />
+      <Header
+        name={name}
+        images={images}
+        overview={overview}
+        structure={structure}
+        geology={geology}
+        active={active}
+      />
+
       <Stats
         revolution={revolution}
         temperature={temperature}

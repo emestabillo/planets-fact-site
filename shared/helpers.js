@@ -12,16 +12,18 @@ export const baseUnderline = css`
   &::before {
     position: absolute;
     content: "";
-    width: 100%;
+    width: 0;
+    left: 50%;
     height: 0.25rem;
     bottom: 0;
     opacity: 0;
-    transition: width 0.2s ease;
+    transition: all 0.2s ease;
   }
 
   &:hover::before {
     opacity: 1;
     width: 100%;
+    left: 0;
   }
 `;
 

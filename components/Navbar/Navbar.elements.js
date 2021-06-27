@@ -7,7 +7,8 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   /* max-width: 85.625rem; */
-  padding: 1.5625rem;
+  padding-top: 1.5625rem;
+  padding-bottom: 1.5625rem;
   align-items: center;
   border-bottom: 1px solid hsla(var(--color-white), 20%);
   position: relative;
@@ -66,7 +67,7 @@ export const NavList = styled.ul`
   background-color: var(--color-background);
   left: 0;
   padding: 0 6%;
-  transition: transform 2.5s cubic-bezier(0, 0.52, 0, 1);
+  transition: transform 0.5s ease;
   transform: ${({ showMenu }) =>
     showMenu ? "translate3d(0vw, 0, 0)" : "translate3d(-100vw, 0, 0)"};
 
@@ -138,26 +139,26 @@ export const PlanetLinks = styled.a`
   display: flex;
   align-items: center;
   cursor: pointer;
-  /* opacity: 0.75;
-  transition: opacity var(--transition); */
+  opacity: 0.8;
+  transition: opacity var(--transition);
 
-  /* &:hover {
+  &:hover {
     opacity: 1;
-  } */
+  }
 
   @media ${QUERIES.tabletAndUp} {
     font-size: 0.6875rem;
-    opacity: 0.75;
     position: relative;
 
     &::before {
-      position: absolute;
-      content: "";
-      width: 100%;
+      /* position: absolute;
+      content: ""; */
+      /* width: 0;
+      left: 50%; */
       height: 0.25rem;
       bottom: -1.6rem;
-      opacity: 0;
-      transition: width 0.2s ease;
+      /* opacity: 0; */
+      /* transition: all 0.2s ease; */
       background-color: ${({ planet }) => {
         if (planet === "Mercury") {
           return "var(--color-mercury-main)";
@@ -182,12 +183,13 @@ export const PlanetLinks = styled.a`
     /* &:hover::before {
       opacity: 1;
       width: 100%;
+      left: 0;
     } */
   }
 
   @media ${QUERIES.desktopAndUp} {
     &::before {
-      top: -2.064rem;
+      top: -2.025rem;
       bottom: revert;
     }
   }

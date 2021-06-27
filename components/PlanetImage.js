@@ -4,6 +4,7 @@ import styled from "styled-components";
 const ImageDiv = styled.div`
   max-width: 25rem;
   margin: 0 auto;
+  /* order: 3; */
 `;
 
 function PlanetImage({ images, active }) {

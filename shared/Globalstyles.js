@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import { COLORS } from "../shared/constants";
 
+const stars = "/background-stars.svg";
+
 const GlobalStyle = createGlobalStyle`
 *,
 *::before,
@@ -24,6 +26,7 @@ body {
   background-color: var(--color-background);
   color: hsl(var(--color-white));
   background-position: left 50% top 30%;
+  background-image: url(${stars});
 }
 
 /* Remove list styles on ul, ol elements which suggests default styling will be removed */

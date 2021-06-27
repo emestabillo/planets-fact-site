@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+import Navbar from "./Navbar/Navbar";
 import MainWrapper from "./MainWrapper";
 
 function Layout({ children }) {

@@ -6,10 +6,25 @@ const ImageDiv = styled.div`
   margin: 0 auto;
 `;
 
-function PlanetImage({ images }) {
+function PlanetImage({ images, active }) {
+  let image;
+  if (active === "Overview") {
+    image = images.planet;
+  } else if (active === "Structure") {
+    image = images.internal;
+  } else {
+    image = images.geology;
+  }
   return (
     <ImageDiv>
-      <Image src={images.planet} layout="fill" />
+      {active === "Geology" && <Image src={images.planet} />}
+      <Image
+        src={image}
+        alt="Picture of something nice"
+        width={650}
+        height={750}
+        quality={65}
+      />
     </ImageDiv>
   );
 }

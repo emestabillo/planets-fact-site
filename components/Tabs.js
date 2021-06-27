@@ -2,11 +2,16 @@ import { useState } from "react";
 import styled from "styled-components";
 import { baseUnderline } from "../shared/helpers";
 import { Gutters } from "../shared/helpers";
-import Image from "next/image";
+import PlanetImage from "./PlanetImage";
 
 const ImageDiv = styled.div`
   max-width: 25rem;
   margin: 0 auto;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 const FlexContainer = styled.div`
@@ -38,15 +43,6 @@ const buttons = ["Overview", "Structure", "Geology"];
 
 function Tabs({ images }) {
   const [active, setActive] = useState(buttons[0]);
-
-  let image;
-  if (active === "Overview") {
-    image = images.planet;
-  } else if (active === "Structure") {
-    image = images.internal;
-  } else {
-    image = images.geology;
-  }
   return (
     <>
       <FlexContainer>
@@ -60,10 +56,7 @@ function Tabs({ images }) {
           </Tab>
         ))}
       </FlexContainer>
-      <ImageDiv>
-        {active === "Geology" && <Image src={images.planet} />}
-        <Image src={image} />
-      </ImageDiv>
+      <PlanetImage images={images} active={active} />
     </>
   );
 }

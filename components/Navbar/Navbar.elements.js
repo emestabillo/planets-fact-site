@@ -60,18 +60,16 @@ export const MenuButton = styled.button`
 `;
 
 export const NavList = styled.ul`
-  position: absolute;
+  position: fixed;
   z-index: 10;
   top: 6.8125rem;
   width: 100vw;
   background-color: var(--color-background);
-  left: 0;
   padding: 0 6%;
-  /* opacity: ${({ showMenu }) => (showMenu ? "1" : "0")}; */
-  transform: ${({ showMenu }) =>
-    showMenu ? "translateX(0)" : "translateX(-100%)"};
+  opacity: ${({ showMenu }) => (showMenu ? "1" : "0")};
+  left: ${({ showMenu }) => (showMenu ? "0" : "100vw")};
 
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
   @media ${QUERIES.tabletAndUp} {
     position: revert;
@@ -79,11 +77,10 @@ export const NavList = styled.ul`
     background-color: transparent;
     padding: 0;
     width: 100%;
-    /* height: revert; */
     display: flex;
     justify-content: space-between;
     margin-left: auto;
-    /* opacity: revert; */
+    opacity: revert;
   }
 
   @media ${QUERIES.desktopAndUp} {

@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Tabs from "../components/Tabs";
 
 const Wrapper = styled.header`
-  grid-area: header;
   display: flex;
   flex-direction: column;
 `;

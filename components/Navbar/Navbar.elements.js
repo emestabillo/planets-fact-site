@@ -67,9 +67,11 @@ export const NavList = styled.ul`
   background-color: var(--color-background);
   left: 0;
   padding: 0 6%;
-  transition: transform 0.5s ease;
+  /* opacity: ${({ showMenu }) => (showMenu ? "1" : "0")}; */
   transform: ${({ showMenu }) =>
-    showMenu ? "translate3d(0vw, 0, 0)" : "translate3d(-100vw, 0, 0)"};
+    showMenu ? "translateX(0)" : "translateX(-100%)"};
+
+  transition: transform 0.3s ease-in-out;
 
   @media ${QUERIES.tabletAndUp} {
     position: revert;
@@ -77,10 +79,11 @@ export const NavList = styled.ul`
     background-color: transparent;
     padding: 0;
     width: 100%;
-    height: revert;
+    /* height: revert; */
     display: flex;
     justify-content: space-between;
     margin-left: auto;
+    /* opacity: revert; */
   }
 
   @media ${QUERIES.desktopAndUp} {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { PlanetData } from "../../data/planets";
 import {
@@ -16,6 +16,17 @@ const navItems = PlanetData.map((a) => a.name);
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
+
+  const useIsMounted = () => {
+    const isMounted = useRef(false);
+    useEffect(() => {
+      isMounted.current = true;
+      return () => (isMounted.current = false);
+    }, []);
+    return isMounted;
+  };
+
+  const isMounted = useIsMounted();
 
   useEffect(() => {
     const body = document.querySelector("body");

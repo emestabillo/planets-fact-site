@@ -5,7 +5,7 @@ import { Gutters } from "../shared/helpers";
 import PlanetImage from "./PlanetImage";
 
 const FlexContainer = styled.div`
-  grid-area: tabs;
+  /* grid-area: tabs; */
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid hsla(var(--color-white), 20%);
@@ -113,7 +113,7 @@ function Tabs({ name, images, overview, structure, geology }) {
           </Tab>
         ))}
       </FlexContainer>
-      <PlanetImage images={images} active={active} />
+      <PlanetImage name={name} images={images} active={active} />
       <Overview>{planetInfo}</Overview>
       <Source>
         <span>Source: </span>

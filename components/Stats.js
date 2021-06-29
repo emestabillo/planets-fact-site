@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StatsWrapper = styled.section`
-  grid-area: stats;
+  /* grid-area: stats; */
 `;
 
 const List = styled.ul`

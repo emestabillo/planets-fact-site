@@ -24,6 +24,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# dotenv environment variables file (build for Zeit Now)
+.env
+.env.build
+
 # local env files
 .env.local
 .env.development.local

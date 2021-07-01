@@ -35,22 +35,23 @@ const Tab = styled.button`
 
   &::before {
     background-color: ${({ name }) => {
-      if (name === "Mercury") {
-        return "var(--color-mercury-menu)";
-      } else if (name === "Venus") {
-        return "var(--color-venus-menu)";
-      } else if (name === "Earth") {
-        return "var(--color-earth-menu)";
-      } else if (name === "Mars") {
-        return "var(--color-mars-menu)";
-      } else if (name === "Jupiter") {
-        return "var(--color-jupiter-menu)";
-      } else if (name === "Saturn") {
-        return "var(--color-saturn-menu)";
-      } else if (name === "Uranus") {
-        return "var(--color-uranus-menu)";
-      } else {
-        return "var(--color-neptune-menu)";
+      switch (name) {
+        case "Mercury":
+          return "var(--color-mercury-menu)";
+        case "Venus":
+          return "var(--color-venus-menu)";
+        case "Earth":
+          return "var(--color-earth-menu)";
+        case "Mars":
+          return "var(--color-mars-menu)";
+        case "Jupiter":
+          return "var(--color-jupiter-menu)";
+        case "Saturn":
+          return "var(--color-saturn-menu)";
+        case "Uranus":
+          return "var(--color-uranus-menu)";
+        case "Neptune":
+          return "var(--color-neptune-menu)";
       }
     }};
   }

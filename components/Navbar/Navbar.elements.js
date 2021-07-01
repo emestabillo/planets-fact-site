@@ -139,7 +139,7 @@ export const PlanetLinks = styled.a`
   display: flex;
   align-items: center;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.75;
   transition: opacity var(--transition);
 
   &:hover {
@@ -151,40 +151,29 @@ export const PlanetLinks = styled.a`
     position: relative;
 
     &::before {
-      /* position: absolute;
-      content: ""; */
-      /* width: 0;
-      left: 50%; */
       height: 0.25rem;
       bottom: -1.6rem;
-      /* opacity: 0; */
-      /* transition: all 0.2s ease; */
       background-color: ${({ planet }) => {
-        if (planet === "Mercury") {
-          return "var(--color-mercury-main)";
-        } else if (planet === "Venus") {
-          return "var(--color-venus-main)";
-        } else if (planet === "Earth") {
-          return "var(--color-earth-main)";
-        } else if (planet === "Mars") {
-          return "var(--color-mars-main)";
-        } else if (planet === "Jupiter") {
-          return "var(--color-jupiter-main)";
-        } else if (planet === "Saturn") {
-          return "var(--color-saturn-main)";
-        } else if (planet === "Uranus") {
-          return "var(--color-uranus-main)";
-        } else {
-          return "var(--color-neptune-main)";
+        switch (planet) {
+          case "Mercury":
+            return "var(--color-mercury-main)";
+          case "Venus":
+            return "var(--color-venus-main)";
+          case "Earth":
+            return "var(--color-earth-main)";
+          case "Mars":
+            return "var(--color-mars-main)";
+          case "Jupiter":
+            return "var(--color-jupiter-main)";
+          case "Saturn":
+            return "var(--color-saturn-main)";
+          case "Uranus":
+            return "var(--color-uranus-main)";
+          case "Neptune":
+            return "var(--color-neptune-main)";
         }
       }};
     }
-
-    /* &:hover::before {
-      opacity: 1;
-      width: 100%;
-      left: 0;
-    } */
   }
 
   @media ${QUERIES.desktopAndUp} {
@@ -202,22 +191,23 @@ export const Circles = styled.span`
   margin-right: 1.5625rem;
   border-radius: 50%;
   background-color: ${({ planet }) => {
-    if (planet === "Mercury") {
-      return "var(--color-mercury-menu)";
-    } else if (planet === "Venus") {
-      return "var(--color-venus-menu)";
-    } else if (planet === "Earth") {
-      return "var(--color-earth-menu)";
-    } else if (planet === "Mars") {
-      return "var(--color-mars-menu)";
-    } else if (planet === "Jupiter") {
-      return "var(--color-jupiter-menu)";
-    } else if (planet === "Saturn") {
-      return "var(--color-saturn-menu)";
-    } else if (planet === "Uranus") {
-      return "var(--color-uranus-menu)";
-    } else {
-      return "var(--color-neptune-menu)";
+    switch (planet) {
+      case "Mercury":
+        return "var(--color-mercury-menu)";
+      case "Venus":
+        return "var(--color-venus-menu)";
+      case "Earth":
+        return "var(--color-earth-menu)";
+      case "Mars":
+        return "var(--color-mars-menu)";
+      case "Jupiter":
+        return "var(--color-jupiter-menu)";
+      case "Saturn":
+        return "var(--color-saturn-menu)";
+      case "Uranus":
+        return "var(--color-uranus-menu)";
+      case "Neptune":
+        return "var(--color-neptune-menu)";
     }
   }};
 

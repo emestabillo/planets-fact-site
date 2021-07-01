@@ -2,8 +2,8 @@ import styled from "styled-components";
 import Tabs from "../components/Tabs";
 
 const Wrapper = styled.header`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas: "tabs" "image" "heading" "info";
 `;
 
 function Header({ name, images, overview, structure, geology, active }) {

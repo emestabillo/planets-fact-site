@@ -86,8 +86,6 @@ button {
   --font-family: 'Spartan', sans-serif;
   --font-family-antonio: 'Antonio', sans-serif;
 
-  --transition: .2s ease;
-
   --color-white: ${COLORS.primary};
   --color-background: ${COLORS.secondary};
 

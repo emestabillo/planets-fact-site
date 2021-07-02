@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { QUERIES } from "../shared/constants";
 import { baseUnderline } from "../shared/helpers";
 import { Gutters } from "../shared/helpers";
 import PlanetImage from "./PlanetImage";
@@ -23,7 +24,6 @@ const Heading = styled.h1`
 `;
 
 const Tab = styled.button`
-  ${baseUnderline}
   color: var(--color-white);
   cursor: pointer;
   padding: 1.25rem 0;
@@ -33,28 +33,34 @@ const Tab = styled.button`
   font-weight: 700;
   opacity: 0.5;
   line-height: 0.625rem;
+  ${baseUnderline}
 
   &::before {
     background-color: ${({ name }) => {
       switch (name) {
         case "Mercury":
-          return "var(--color-mercury-menu)";
+          return "var(--color-mercury-main)";
         case "Venus":
-          return "var(--color-venus-menu)";
+          return "var(--color-venus-main)";
         case "Earth":
-          return "var(--color-earth-menu)";
+          return "var(--color-earth-main)";
         case "Mars":
-          return "var(--color-mars-menu)";
+          return "var(--color-mars-main)";
         case "Jupiter":
-          return "var(--color-jupiter-menu)";
+          return "var(--color-jupiter-main)";
         case "Saturn":
-          return "var(--color-saturn-menu)";
+          return "var(--color-saturn-main)";
         case "Uranus":
-          return "var(--color-uranus-menu)";
+          return "var(--color-uranus-main)";
         case "Neptune":
-          return "var(--color-neptune-menu)";
+          return "var(--color-neptune-main)";
       }
     }};
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 1;
   }
 `;
 
@@ -73,30 +79,41 @@ const Source = styled.div`
   font-size: 0.75rem;
   order: 5;
   opacity: 0.5;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.25s var(--transition);
   pointer-events: none;
 
   &:hover {
     opacity: 1;
   }
+
+  svg {
+    margin-left: 0.25rem;
+    vertical-align: middle;
+
+    @media ${QUERIES.tabletAndUp} {
+      margin-left: 0.5rem;
+    }
+  }
 `;
 
 const WikiLink = styled.a`
   text-decoration: underline;
+  font-weight: 700;
   pointer-events: auto;
 `;
 
 const buttons = ["Overview", "Structure", "Geology"];
 
 function Tabs({ name, images, overview, structure, geology }) {
-  const [active, setActive] = useState(buttons[0]);
+  const [activeTab, setActiveTab] = useState(buttons[0]);
 
   let planetInfo;
   let wikiSource;
-  if (active === "Overview") {
+
+  if (activeTab === "Overview") {
     planetInfo = overview.content;
     wikiSource = overview.source;
-  } else if (active === "Structure") {
+  } else if (activeTab === "Structure") {
     planetInfo = structure.content;
     wikiSource = structure.source;
   } else {
@@ -111,21 +128,21 @@ function Tabs({ name, images, overview, structure, geology }) {
         {buttons.map((type) => (
           <Tab
             key={type}
-            active={active === type}
-            onClick={() => setActive(type)}
+            activeTab={activeTab === type}
+            onClick={() => setActiveTab(type)}
             name={name}
           >
             {type}
           </Tab>
         ))}
       </FlexContainer>
-      <PlanetImage name={name} images={images} active={active} />
+      <PlanetImage name={name} images={images} activeTab={activeTab} />
       <Wrapper>
         <Overview>{planetInfo}</Overview>
         <Source>
-          <span>Source: </span>
+          <span>Source : </span>
           <WikiLink href={wikiSource}>
-            Wikipedia{" "}
+            Wikipedia
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
               <path
                 fill="#FFF"

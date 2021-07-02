@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { PlanetData } from "../../data/planets";
 import {
@@ -16,17 +16,9 @@ const navItems = PlanetData.map((a) => a.name);
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
-
-  const useIsMounted = () => {
-    const isMounted = useRef(false);
-    useEffect(() => {
-      isMounted.current = true;
-      return () => (isMounted.current = false);
-    }, []);
-    return isMounted;
+  const closeMenu = () => {
+    setShowMenu(false);
   };
-
-  const isMounted = useIsMounted();
 
   useEffect(() => {
     const body = document.querySelector("body");
@@ -36,7 +28,10 @@ function Navbar() {
   return (
     <Nav>
       <LogoLink href="/">The planets</LogoLink>
-      <MenuButton onClick={toggleMenu}>
+      <MenuButton
+        onClick={toggleMenu}
+        aria-expanded={showMenu ? `true` : `false`}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -51,10 +46,10 @@ function Navbar() {
       <NavList showMenu={showMenu}>
         {navItems.map((planet, index) => {
           return (
-            <NavItems key={index} onClick={toggleMenu}>
-              <Link href={`/${planet}`} index={index}>
-                <PlanetLinks planet={planet}>
-                  <Circles aria-label="hidden" planet={planet}></Circles>
+            <NavItems key={index} onClick={closeMenu}>
+              <Link href={`/${planet}`}>
+                <PlanetLinks planet={planet} href={`/${planet}`}>
+                  <Circles aria-hidden="true" planet={planet}></Circles>
                   {planet}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

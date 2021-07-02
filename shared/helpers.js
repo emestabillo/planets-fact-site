@@ -2,12 +2,7 @@ import { css } from "styled-components";
 
 export const baseUnderline = css`
   position: relative;
-  opacity: 0.75;
-  transition: opacity var(--transition);
-
-  &:hover {
-    opacity: 1;
-  }
+  transition: opacity 0.2s;
 
   &::before {
     position: absolute;
@@ -17,10 +12,11 @@ export const baseUnderline = css`
     height: 0.25rem;
     bottom: 0;
     opacity: 0;
-    transition: all 0.2s ease;
+    transition: opacity 0.2s, width 0.2s, left 0.2s;
   }
 
-  &:hover::before {
+  &:hover::before,
+  &:focus::before {
     opacity: 1;
     width: 100%;
     left: 0;

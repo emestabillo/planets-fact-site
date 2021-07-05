@@ -27,6 +27,7 @@ body {
   color: hsl(var(--color-white));
   background-position: left 50% top 30%;
   background-image: url(${stars});
+  background-attachment: fixed;
 }
 
 /* Remove list styles on ul, ol elements which suggests default styling will be removed */

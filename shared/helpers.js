@@ -27,3 +27,26 @@ export const Gutters = css`
   padding-left: 6%;
   padding-right: 6%;
 `;
+
+export const PlanetSize = css`
+  ${({ name }) => {
+    switch (name) {
+      case "Mercury":
+        return "6.9375rem";
+      case "Venus":
+        return "9.625rem";
+      case "Earth":
+        return "10.8125rem";
+      case "Mars":
+        return "8.0625rem";
+      case "Jupiter":
+        return "14rem";
+      case "Saturn":
+        return "16rem";
+      case "Uranus":
+        return "11rem";
+      case "Neptune":
+        return "10.8125rem";
+    }
+  }};
+`;

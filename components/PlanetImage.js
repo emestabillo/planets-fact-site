@@ -1,9 +1,31 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { QUERIES } from "../shared/constants";
+import { PlanetSize } from "../shared/helpers";
 
-const ImageDiv = styled.div`
+const Wrapper = styled.div`
   padding: 1.5rem 0;
   margin: 0 auto;
+  height: 19rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+`;
+
+const ImageDiv = styled.div`
+  position: relative;
+  width: ${PlanetSize};
+  height: ${PlanetSize};
+`;
+
+const SmallImage = styled.div`
+  position: absolute;
+  bottom: 1.25rem;
+  width: 98px;
+  height: 120px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 `;
 
 function PlanetImage({ name, images, activeTab }) {
@@ -20,10 +42,21 @@ function PlanetImage({ name, images, activeTab }) {
     alt = `Illustration of ${name}'s surface geology`;
   }
   return (
-    <ImageDiv name={name}>
-      {activeTab === "Geology" && <Image src={images.planet} alt="" />}
-      <Image src={image} alt={alt} width={422} height={422} />
-    </ImageDiv>
+    <Wrapper>
+      <ImageDiv name={name}>
+        <Image
+          src={activeTab === "Geology" ? images.planet : image}
+          alt={activeTab === "Geology" ? "" : alt}
+          layout="responsive"
+          objectFit="cover"
+        />
+      </ImageDiv>
+      {activeTab === "Geology" && (
+        <SmallImage name={name}>
+          <Image src={image} alt={alt} width={163} height={199} />
+        </SmallImage>
+      )}
+    </Wrapper>
   );
 }
 

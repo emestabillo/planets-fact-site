@@ -79,7 +79,7 @@ const Source = styled.div`
   font-size: 0.75rem;
   order: 5;
   opacity: 0.5;
-  transition: opacity 0.25s var(--transition);
+  transition: opacity 0.25s ease;
   pointer-events: none;
 
   &:hover {

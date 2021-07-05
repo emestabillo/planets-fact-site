@@ -15,7 +15,7 @@ export const COLORS = {
   },
   mars: {
     menu: "hsl(12, 100%, 64%)",
-    main: "hsl(110, 63%, 51%)",
+    main: "hsl(10, 63%, 51%)",
   },
   jupiter: {
     menu: "hsl(27, 75%, 70%)",

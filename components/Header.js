@@ -6,13 +6,13 @@ const Wrapper = styled.header`
   grid-template-areas: "tabs" "image" "heading" "info";
 `;
 
-function Header({ name, images, overview, structure, geology, active }) {
+function Header({ name, images, overview, structure, geology, activeTab }) {
   return (
     <Wrapper>
       <Tabs
         name={name}
         images={images}
-        active={active}
+        activeTab={activeTab}
         overview={overview}
         structure={structure}
         geology={geology}

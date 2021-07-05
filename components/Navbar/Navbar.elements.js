@@ -69,7 +69,7 @@ export const NavList = styled.ul`
   opacity: ${({ showMenu }) => (showMenu ? "1" : "0")};
   left: ${({ showMenu }) => (showMenu ? "0" : "100vw")};
 
-  transition: all 0.5s ease-in-out;
+  transition: opacity 0.5s, left 0.5s;
 
   @media ${QUERIES.tabletAndUp} {
     position: revert;
@@ -95,7 +95,7 @@ export const NavList = styled.ul`
 export const NavItems = styled.li`
   text-transform: uppercase;
   padding: 1.25rem 0;
-  transition: 0.25s ease;
+  transition: border-bottom 0.25s;
 
   @media ${QUERIES.tabletAndUp} {
     padding: 0;
@@ -131,7 +131,6 @@ export const NavItems = styled.li`
 `;
 
 export const PlanetLinks = styled.a`
-  ${baseUnderline}
   font-size: 0.9375rem;
   font-weight: var(--font-weight-bold);
   line-height: 1.5625rem;
@@ -140,9 +139,11 @@ export const PlanetLinks = styled.a`
   align-items: center;
   cursor: pointer;
   opacity: 0.75;
-  transition: opacity var(--transition);
+  transition: opacity 0.2s;
+  ${baseUnderline}
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 1;
   }
 

@@ -2,12 +2,7 @@ import { css } from "styled-components";
 
 export const baseUnderline = css`
   position: relative;
-  opacity: 0.75;
-  transition: opacity var(--transition);
-
-  &:hover {
-    opacity: 1;
-  }
+  transition: opacity 0.2s;
 
   &::before {
     position: absolute;
@@ -17,10 +12,11 @@ export const baseUnderline = css`
     height: 0.25rem;
     bottom: 0;
     opacity: 0;
-    transition: all 0.2s ease;
+    transition: opacity 0.2s, width 0.2s, left 0.2s;
   }
 
-  &:hover::before {
+  &:hover::before,
+  &:focus::before {
     opacity: 1;
     width: 100%;
     left: 0;
@@ -30,4 +26,27 @@ export const baseUnderline = css`
 export const Gutters = css`
   padding-left: 6%;
   padding-right: 6%;
+`;
+
+export const PlanetSize = css`
+  ${({ name }) => {
+    switch (name) {
+      case "Mercury":
+        return "6.9375rem";
+      case "Venus":
+        return "9.625rem";
+      case "Earth":
+        return "10.8125rem";
+      case "Mars":
+        return "8.0625rem";
+      case "Jupiter":
+        return "14rem";
+      case "Saturn":
+        return "16rem";
+      case "Uranus":
+        return "11rem";
+      case "Neptune":
+        return "10.8125rem";
+    }
+  }};
 `;

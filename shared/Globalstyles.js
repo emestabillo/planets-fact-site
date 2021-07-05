@@ -27,6 +27,7 @@ body {
   color: hsl(var(--color-white));
   background-position: left 50% top 30%;
   background-image: url(${stars});
+  background-attachment: fixed;
 }
 
 /* Remove list styles on ul, ol elements which suggests default styling will be removed */
@@ -85,8 +86,6 @@ button {
 
   --font-family: 'Spartan', sans-serif;
   --font-family-antonio: 'Antonio', sans-serif;
-
-  --transition: .2s ease;
 
   --color-white: ${COLORS.primary};
   --color-background: ${COLORS.secondary};

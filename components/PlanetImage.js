@@ -16,6 +16,10 @@ const ImageDiv = styled.div`
   position: relative;
   width: ${PlanetSize};
   height: ${PlanetSize};
+
+  @media ${QUERIES.tabletAndUp} {
+    transform: scale(1.65);
+  }
 `;
 
 const SmallImage = styled.div`

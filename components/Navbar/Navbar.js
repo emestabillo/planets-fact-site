@@ -20,10 +20,10 @@ function Navbar() {
     setShowMenu(false);
   };
 
-  useEffect(() => {
-    const body = document.querySelector("body");
-    body.style.overflow = showMenu ? "hidden" : "auto";
-  }, [showMenu]);
+  // useEffect(() => {
+  //   const body = document.querySelector("body");
+  //   body.style.overflow = showMenu ? "hidden" : "auto";
+  // }, [showMenu]);
 
   return (
     <Nav>

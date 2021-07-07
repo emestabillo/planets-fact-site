@@ -68,8 +68,12 @@ export const NavList = styled.ul`
   padding: 0 6%;
   opacity: ${({ showMenu }) => (showMenu ? "1" : "0")};
   left: ${({ showMenu }) => (showMenu ? "0" : "100vw")};
-
   transition: opacity 0.5s, left 0.5s;
+
+  &::after {
+    position: fixed;
+    content: "";
+  }
 
   @media ${QUERIES.tabletAndUp} {
     position: revert;

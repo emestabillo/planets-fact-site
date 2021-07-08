@@ -10,6 +10,12 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+  grid-area: image;
+
+  @media ${QUERIES.tabletAndUp} {
+    /* border: 1px solid red; */
+    padding: 15rem 0;
+  }
 `;
 
 const ImageDiv = styled.div`
@@ -19,6 +25,8 @@ const ImageDiv = styled.div`
 
   @media ${QUERIES.tabletAndUp} {
     transform: scale(1.65);
+    /* border: 1px solid pink; */
+    /* padding: 3.375rem 0 2.25rem; */
   }
 `;
 

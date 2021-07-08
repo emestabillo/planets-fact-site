@@ -12,15 +12,26 @@ const FlexContainer = styled.div`
   border-bottom: 1px solid hsla(var(--color-white), 20%);
   margin: 0 -6%;
   ${Gutters}
+
+  @media ${QUERIES.tabletAndUp} {
+    flex-direction: column;
+    border-bottom: revert;
+    margin: revert;
+    padding: revert;
+  }
 `;
 
 const Heading = styled.h1`
   grid-area: heading;
   font-family: var(--font-family-antonio);
-  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 6vw, 5rem);
   text-transform: uppercase;
   padding-bottom: 1rem;
   order: 2;
+
+  @media ${QUERIES.tabletAndUp} {
+    padding-bottom: revert;
+  }
 `;
 
 const Tab = styled.button`
@@ -73,6 +84,11 @@ const Overview = styled.p`
   line-height: 2;
   padding: 0 0.5rem 2rem;
   order: 4;
+
+  @media ${QUERIES.tabletAndUp} {
+    padding: 1.5rem 0;
+    font-size: 0.875rem;
+  }
 `;
 
 const Source = styled.div`
@@ -84,6 +100,10 @@ const Source = styled.div`
 
   &:hover {
     opacity: 1;
+  }
+
+  @media ${QUERIES.tabletAndUp} {
+    font-size: 0.875rem;
   }
 
   svg {

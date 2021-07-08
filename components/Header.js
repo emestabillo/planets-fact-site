@@ -6,9 +6,11 @@ const Wrapper = styled.header`
   display: grid;
   grid-template-areas: "tabs" "image" "heading" "info";
 
-  /* @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.tabletAndUp} {
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "image image" "heading ." "info tabs";
-  } */
+    text-align: left;
+  }
 `;
 
 function Header({ name, images, overview, structure, geology, activeTab }) {

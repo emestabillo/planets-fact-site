@@ -20,16 +20,17 @@ function Navbar() {
     setShowMenu(false);
   };
 
-  // useEffect(() => {
-  //   const body = document.querySelector("body");
-  //   body.style.overflow = showMenu ? "hidden" : "auto";
-  // }, [showMenu]);
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = showMenu ? "hidden" : "auto";
+  }, [showMenu]);
 
   return (
     <Nav>
       <LogoLink href="/">The planets</LogoLink>
       <MenuButton
         onClick={toggleMenu}
+        aria-label="Toggle mobile menu button"
         aria-expanded={showMenu ? `true` : `false`}
       >
         <svg

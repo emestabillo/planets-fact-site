@@ -64,16 +64,22 @@ export const NavList = styled.ul`
   z-index: 10;
   top: 6.8125rem;
   width: 100vw;
+  overflow-y: scroll;
+  bottom: 0;
   background-color: var(--color-background);
   padding: 0 6%;
   opacity: ${({ showMenu }) => (showMenu ? "1" : "0")};
   left: ${({ showMenu }) => (showMenu ? "0" : "100vw")};
   transition: opacity 0.5s, left 0.5s;
 
-  &::after {
+  /* &::after {
     position: fixed;
     content: "";
-  }
+    position: fixed;
+    overflow-y: scroll;
+
+    bottom: 0;
+  } */
 
   @media ${QUERIES.tabletAndUp} {
     position: revert;

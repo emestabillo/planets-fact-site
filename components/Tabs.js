@@ -73,6 +73,11 @@ const Tab = styled.button`
   &:focus {
     opacity: 1;
   }
+
+  @media ${QUERIES.tabletAndUp} {
+    border: 1px solid currentColor;
+    text-align: left;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -86,8 +91,9 @@ const Overview = styled.p`
   order: 4;
 
   @media ${QUERIES.tabletAndUp} {
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 2rem;
     font-size: 0.875rem;
+    max-width: 31.25rem;
   }
 `;
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { QUERIES } from "../shared/constants";
 
 const StatsWrapper = styled.section`
   /* grid-area: stats; */
@@ -10,6 +11,9 @@ const List = styled.ul`
 
   & > * + * {
     margin-top: 0.5rem;
+  }
+
+  @media ${QUERIES.tabletAndUp} {
   }
 `;
 

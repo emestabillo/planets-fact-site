@@ -13,7 +13,6 @@ const Wrapper = styled.div`
   grid-area: image;
 
   @media ${QUERIES.tabletAndUp} {
-    border: 1px solid red;
     padding: 15rem 0;
   }
 `;
@@ -25,13 +24,13 @@ const ImageDiv = styled.div`
 
   @media ${QUERIES.tabletAndUp} {
     transform: scale(1.65);
-    border: 1px solid pink;
   }
 `;
 
 const SmallImage = styled.div`
   position: absolute;
-  bottom: 1.25rem;
+  bottom: ${({ name }) =>
+    name === "Mercury" ? "15%" : name === "Jupiter" ? "0" : "12%"};
   width: 98px;
   height: 120px;
   margin: 0 auto;

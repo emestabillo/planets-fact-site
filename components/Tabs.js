@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { QUERIES } from "../shared/constants";
 import { baseUnderline } from "../shared/helpers";
+import { PlanetColors } from "../shared/helpers";
 import { Gutters } from "../shared/helpers";
 import PlanetImage from "./PlanetImage";
 
@@ -17,7 +18,11 @@ const FlexContainer = styled.div`
     flex-direction: column;
     border-bottom: revert;
     margin: revert;
-    padding: revert;
+    padding: 0 0 2rem 4.375rem;
+
+    & > * + * {
+      margin-top: 1rem;
+    }
   }
 `;
 
@@ -47,26 +52,11 @@ const Tab = styled.button`
   ${baseUnderline}
 
   &::before {
-    background-color: ${({ name }) => {
-      switch (name) {
-        case "Mercury":
-          return "var(--color-mercury-main)";
-        case "Venus":
-          return "var(--color-venus-main)";
-        case "Earth":
-          return "var(--color-earth-main)";
-        case "Mars":
-          return "var(--color-mars-main)";
-        case "Jupiter":
-          return "var(--color-jupiter-main)";
-        case "Saturn":
-          return "var(--color-saturn-main)";
-        case "Uranus":
-          return "var(--color-uranus-main)";
-        case "Neptune":
-          return "var(--color-neptune-main)";
-      }
-    }};
+    background-color: ${PlanetColors};
+
+    @media ${QUERIES.tabletAndUp} {
+      background-color: revert;
+    }
   }
 
   &:hover,
@@ -77,11 +67,32 @@ const Tab = styled.button`
   @media ${QUERIES.tabletAndUp} {
     border: 1px solid currentColor;
     text-align: left;
+    padding: 0.5rem 0 0.5rem 1.25rem;
+    flex: 1;
+
+    &:hover {
+      opacity: revert;
+      background-color: var(--color-hover);
+      border-color: var(--color-hover);
+      background-clip: padding-box;
+    }
+
+    &:focus {
+      background-color: ${PlanetColors};
+      border-color: ${PlanetColors};
+    }
   }
 `;
 
 const Wrapper = styled.div`
   grid-area: info;
+
+  @media ${QUERIES.tabletAndUp} {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* max-width: 31.25rem; */
+  }
 `;
 
 const Overview = styled.p`
@@ -92,8 +103,9 @@ const Overview = styled.p`
 
   @media ${QUERIES.tabletAndUp} {
     padding: 1.5rem 0 2rem;
-    font-size: 0.875rem;
-    max-width: 31.25rem;
+    /* font-size: 0.875rem; */
+    /* max-width: 31.25rem; */
+    min-height: 10.375rem;
   }
 `;
 
@@ -150,6 +162,7 @@ function Tabs({ name, images, overview, structure, geology }) {
   return (
     <>
       <Heading>{name}</Heading>
+      <PlanetImage name={name} images={images} activeTab={activeTab} />
       <FlexContainer>
         {buttons.map((type) => (
           <Tab
@@ -162,7 +175,7 @@ function Tabs({ name, images, overview, structure, geology }) {
           </Tab>
         ))}
       </FlexContainer>
-      <PlanetImage name={name} images={images} activeTab={activeTab} />
+
       <Wrapper>
         <Overview>{planetInfo}</Overview>
         <Source>

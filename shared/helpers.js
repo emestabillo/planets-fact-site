@@ -50,3 +50,39 @@ export const PlanetSize = css`
     }
   }};
 `;
+
+export const PlanetColors = css`
+  ${({ name }) => {
+    switch (name) {
+      case "Mercury":
+        return "var(--color-mercury-main)";
+      case "Venus":
+        return "var(--color-venus-main)";
+      case "Earth":
+        return "var(--color-earth-main)";
+      case "Mars":
+        return "var(--color-mars-main)";
+      case "Jupiter":
+        return "var(--color-jupiter-main)";
+      case "Saturn":
+        return "var(--color-saturn-main)";
+      case "Uranus":
+        return "var(--color-uranus-main)";
+      case "Neptune":
+        return "var(--color-neptune-main)";
+    }
+  }};
+`;
+
+export const SRonly = css`
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+`;

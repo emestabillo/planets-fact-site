@@ -72,15 +72,6 @@ export const NavList = styled.ul`
   left: ${({ showMenu }) => (showMenu ? "0" : "100vw")};
   transition: opacity 0.5s, left 0.5s;
 
-  /* &::after {
-    position: fixed;
-    content: "";
-    position: fixed;
-    overflow-y: scroll;
-
-    bottom: 0;
-  } */
-
   @media ${QUERIES.tabletAndUp} {
     position: revert;
     transform: revert;
@@ -91,6 +82,7 @@ export const NavList = styled.ul`
     justify-content: space-between;
     margin-left: auto;
     opacity: revert;
+    overflow-y: revert;
   }
 
   @media ${QUERIES.desktopAndUp} {

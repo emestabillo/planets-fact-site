@@ -89,6 +89,7 @@ button {
 
   --color-white: ${COLORS.primary};
   --color-background: ${COLORS.secondary};
+  --color-hover: ${COLORS.hover};
 
   //MOBILE
   --color-mercury-menu: ${COLORS.mercury.menu};

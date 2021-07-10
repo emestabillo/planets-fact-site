@@ -1,6 +1,7 @@
 export const COLORS = {
   primary: "0, 0%, 100%",
   secondary: "hsl(240, 67%, 8%)",
+  hover: "rgba(216, 216, 216, .2)",
   mercury: {
     menu: "hsl(196, 83%, 93%)",
     main: "hsl(194, 48%, 49%)",

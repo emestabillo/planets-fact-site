@@ -1,8 +1,13 @@
 import styled from "styled-components";
 import { QUERIES } from "../shared/constants";
+import { SRonly } from "../shared/helpers";
 
 const StatsWrapper = styled.section`
   /* grid-area: stats; */
+`;
+
+const Heading = styled.h2`
+  ${SRonly}
 `;
 
 const List = styled.ul`
@@ -14,6 +19,12 @@ const List = styled.ul`
   }
 
   @media ${QUERIES.tabletAndUp} {
+    display: flex;
+    justify-content: space-between;
+
+    & > * + * {
+      margin-left: 0.6875rem;
+    }
   }
 `;
 
@@ -28,6 +39,14 @@ const ListItem = styled.li`
   align-items: center;
   padding: 0.5625rem 1.5rem;
   border: 1px solid currentColor;
+
+  @media ${QUERIES.tabletAndUp} {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 0 19px 15px;
+    margin-top: revert;
+    flex: 1;
+  }
 `;
 
 const Fact = styled.span`
@@ -41,6 +60,7 @@ const Fact = styled.span`
 function Stats({ rotation, revolution, radius, temperature }) {
   return (
     <StatsWrapper>
+      <Heading>planet statistics</Heading>
       <List>
         <ListItem>
           Rotation time

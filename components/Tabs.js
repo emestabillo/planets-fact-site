@@ -65,15 +65,15 @@ const Tab = styled.button`
   }
 
   @media ${QUERIES.tabletAndUp} {
-    border: 1px solid currentColor;
+    border: 1px solid var(--color-hover);
     text-align: left;
     padding: 0.5rem 0 0.5rem 1.25rem;
+    opacity: revert;
     flex: 1;
+    transition: background-color 0.2s;
 
     &:hover {
-      opacity: revert;
       background-color: var(--color-hover);
-      border-color: var(--color-hover);
       background-clip: padding-box;
     }
 
@@ -83,15 +83,28 @@ const Tab = styled.button`
     }
   }
 `;
+const SpanNumber = styled.span`
+  opacity: 0.5;
+  display: none;
+
+  @media ${QUERIES.tabletAndUp} {
+    display: inline-block;
+  } ;
+`;
+
+const SpanText = styled.span`
+  display: none;
+  @media ${QUERIES.tabletAndUp} {
+    display: inline-block;
+  } ;
+`;
 
 const Wrapper = styled.div`
   grid-area: info;
 
   @media ${QUERIES.tabletAndUp} {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* max-width: 31.25rem; */
+    display: grid;
+    grid-template-rows: 11.875rem auto;
   }
 `;
 
@@ -102,9 +115,7 @@ const Overview = styled.p`
   order: 4;
 
   @media ${QUERIES.tabletAndUp} {
-    padding: 1.5rem 0 2rem;
-    /* font-size: 0.875rem; */
-    /* max-width: 31.25rem; */
+    padding: 2rem 0 3rem;
     min-height: 10.375rem;
   }
 `;
@@ -121,7 +132,7 @@ const Source = styled.div`
   }
 
   @media ${QUERIES.tabletAndUp} {
-    font-size: 0.875rem;
+    /* font-size: 0.875rem; */
   }
 
   svg {
@@ -164,18 +175,25 @@ function Tabs({ name, images, overview, structure, geology }) {
       <Heading>{name}</Heading>
       <PlanetImage name={name} images={images} activeTab={activeTab} />
       <FlexContainer>
-        {buttons.map((type) => (
+        {buttons.map((type, index) => (
           <Tab
             key={type}
             activeTab={activeTab === type}
             onClick={() => setActiveTab(type)}
             name={name}
           >
+            <SpanNumber aria-hidden="true">{`0${index + 1}`}</SpanNumber>{" "}
+            <SpanText>
+              {type === "Structure"
+                ? "Internal"
+                : type === "Geology"
+                ? "Surface"
+                : ""}
+            </SpanText>{" "}
             {type}
           </Tab>
         ))}
       </FlexContainer>
-
       <Wrapper>
         <Overview>{planetInfo}</Overview>
         <Source>

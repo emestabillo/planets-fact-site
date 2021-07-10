@@ -17,6 +17,7 @@ export const Nav = styled.nav`
 
   @media ${QUERIES.tabletAndUp} {
     flex-direction: column;
+    padding-bottom: 0.9375rem;
   }
 
   @media ${QUERIES.desktopAndUp} {
@@ -31,7 +32,7 @@ export const LogoLink = styled.a`
   letter-spacing: -1.05px;
 
   @media ${QUERIES.tabletAndUp} {
-    padding-bottom: 2.5rem;
+    padding-bottom: 1.875rem;
   }
 
   @media ${QUERIES.desktopAndUp} {
@@ -96,7 +97,7 @@ export const NavList = styled.ul`
 
 export const NavItems = styled.li`
   text-transform: uppercase;
-  padding: 1.25rem 0;
+  /* padding: 1.25rem 0; */
   transition: border-bottom 0.25s;
 
   @media ${QUERIES.tabletAndUp} {
@@ -140,6 +141,7 @@ export const PlanetLinks = styled.a`
   display: flex;
   align-items: center;
   cursor: pointer;
+  padding: 1.25rem 0;
   opacity: 0.75;
   transition: opacity 0.2s;
   ${baseUnderline}
@@ -152,10 +154,11 @@ export const PlanetLinks = styled.a`
   @media ${QUERIES.tabletAndUp} {
     font-size: 0.6875rem;
     position: relative;
+    padding: 0.625rem 0;
 
     &::before {
       height: 0.25rem;
-      bottom: -1.6rem;
+      bottom: -1rem;
       background-color: ${({ planet }) => {
         switch (planet) {
           case "Mercury":

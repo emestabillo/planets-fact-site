@@ -1,8 +1,6 @@
 import { PlanetData } from "../data/planets";
 import Header from "../components/Header";
-// import Tabs from "../components/Tabs";
 import Stats from "../components/Stats";
-// import PlanetImage from "../components/PlanetImage";
 
 export async function getStaticPaths() {
   const paths = PlanetData.map((planet) => ({

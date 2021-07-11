@@ -1,4 +1,5 @@
 import { css } from "styled-components";
+import { QUERIES } from "./constants";
 
 export const baseUnderline = css`
   position: relative;
@@ -24,8 +25,15 @@ export const baseUnderline = css`
 `;
 
 export const Gutters = css`
-  padding-left: 6%;
-  padding-right: 6%;
+  padding-left: clamp(6%, 6vw, 40rem);
+  padding-right: clamp(6%, 6vw, 40rem);
+  // padding-left: 6%;
+  // padding-right: 6%;
+
+  // @media ${QUERIES.laptopAndUp} {
+  //   padding-left: 2.5rem;
+  //   padding-right: 2.5rem;
+  // } ;
 `;
 
 export const PlanetSize = css`

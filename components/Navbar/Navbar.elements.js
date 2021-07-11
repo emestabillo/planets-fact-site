@@ -22,7 +22,7 @@ export const Nav = styled.nav`
 
   @media ${QUERIES.laptopAndUp} {
     flex-direction: revert;
-    align-items: flex-end;
+    align-items: center;
   }
 `;
 

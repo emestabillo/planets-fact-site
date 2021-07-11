@@ -185,8 +185,9 @@ export const PlanetLinks = styled.a`
 
   @media ${QUERIES.laptopAndUp} {
     padding: 0;
+
     &::before {
-      top: -2.5rem;
+      top: -2rem;
       bottom: revert;
     }
   }

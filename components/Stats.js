@@ -5,11 +5,18 @@ import { SRonly } from "../shared/helpers";
 const StatsWrapper = styled.section`
   padding-top: 1.75rem;
   text-transform: uppercase;
+  max-width: 34.375rem;
+  margin: 0 auto;
+
+  @media ${QUERIES.tabletAndUp} {
+    padding-top: 2.3125rem;
+    max-width: revert;
+    margin: revert;
+  }
 
   @media ${QUERIES.desktopAndUp} {
     padding-top: 5.4375rem;
     padding-bottom: 3.5rem;
-    /* text-transform: uppercase; */
   } ;
 `;
 
@@ -18,9 +25,6 @@ const Heading = styled.h2`
 `;
 
 const List = styled.ul`
-  /* padding-top: 1.75rem;
-  text-transform: uppercase; */
-
   & > * + * {
     margin-top: 0.5rem;
   }
@@ -50,7 +54,7 @@ const ListItem = styled.li`
   @media ${QUERIES.tabletAndUp} {
     flex-direction: column;
     align-items: flex-start;
-    padding: 16px 0 19px 15px;
+    padding: 1rem 0 1.1875rem 0.9375rem;
     margin-top: revert;
     flex: 1;
   }
@@ -59,6 +63,7 @@ const ListItem = styled.li`
     font-size: 0.6875rem;
     line-height: 2.27;
     letter-spacing: 0.0625rem;
+    padding: 1.25rem 0 1.6875rem 1.5rem;
   } ;
 `;
 
@@ -69,8 +74,13 @@ const Fact = styled.span`
   line-height: 1.3;
   letter-spacing: 0.047rem;
 
+  @media ${QUERIES.tabletAndUp} {
+    padding-top: 0.375rem;
+  }
+
   @media ${QUERIES.desktopAndUp} {
     letter-spacing: -0.09375rem;
+    padding-top: 0.25rem;
   } ;
 `;
 

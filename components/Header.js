@@ -43,6 +43,7 @@ const buttons = ["Overview", "Structure", "Geology"];
 
 function Header({ name, images, overview, structure, geology }) {
   const [activeTab, setActiveTab] = useState(buttons[0]);
+
   return (
     <Wrapper>
       <Heading>{name}</Heading>

@@ -15,6 +15,10 @@ const Wrapper = styled.div`
   @media ${QUERIES.tabletAndUp} {
     padding: 15rem 0;
   }
+
+  @media ${QUERIES.desktopAndUp} {
+    min-height: 100%;
+  } ;
 `;
 
 const ImageDiv = styled.div`
@@ -25,6 +29,10 @@ const ImageDiv = styled.div`
   @media ${QUERIES.tabletAndUp} {
     transform: scale(1.65);
   }
+
+  @media ${QUERIES.desktopAndUp} {
+    transform: scale(2.6);
+  } ;
 `;
 
 const SmallImage = styled.div`
@@ -36,6 +44,11 @@ const SmallImage = styled.div`
   margin: 0 auto;
   left: 0;
   right: 0;
+
+  @media ${QUERIES.desktopAndUp} {
+    transform: scale(1.65);
+    bottom: 10%;
+  } ;
 `;
 
 function PlanetImage({ name, images, activeTab }) {

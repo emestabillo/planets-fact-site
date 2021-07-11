@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 import { QUERIES } from "../shared/constants";
 import { baseUnderline } from "../shared/helpers";
@@ -37,26 +36,20 @@ const Tab = styled.button`
   font-size: 0.5625rem;
   letter-spacing: 0.12rem;
   font-weight: 700;
-  opacity: 0.5;
+  opacity: ${({ activeTab }) => (activeTab ? "1" : "0.5")};
   line-height: 0.625rem;
-  /* background-color: ${({ activeTab, PlanetColors }) =>
-    activeTab ? PlanetColors : "transparent"}; */
   ${baseUnderline}
 
   &::before {
     background-color: ${PlanetColors};
+    opacity: ${({ activeTab }) => (activeTab ? "1" : "0")};
+    width: ${({ activeTab }) => (activeTab ? "100%" : "0")};
+    left: ${({ activeTab }) => (activeTab ? "0" : "50%")};
 
     @media ${QUERIES.tabletAndUp} {
       background-color: revert;
     }
   }
-  /* &:hover {
-    opacity: 1;
-  }
-
-  &:focus {
-
-  } */
 
   &:hover,
   &:focus {
@@ -70,6 +63,8 @@ const Tab = styled.button`
     padding: 0.5rem 0 0.5rem 1.25rem;
     opacity: revert;
     flex: 1;
+    background-color: ${({ activeTab }) =>
+      activeTab ? PlanetColors : "transparent"};
     transition: background-color 0.2s;
 
     &:hover {
@@ -85,7 +80,7 @@ const Tab = styled.button`
 
   @media ${QUERIES.desktopAndUp} {
     font-size: 0.75rem;
-    padding: 12px 0 12px 1.85rem;
+    padding: 1rem 0 0.75rem 1.85rem;
     line-height: 2.08;
   }
 `;

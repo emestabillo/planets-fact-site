@@ -3,10 +3,14 @@ import { QUERIES } from "../shared/constants";
 
 const Wrapper = styled.div`
   grid-area: info;
+  max-width: 34.375rem;
+  margin: 0 auto;
 
   @media ${QUERIES.tabletAndUp} {
     display: grid;
     grid-template-rows: 11.875rem auto;
+    max-width: revert;
+    margin: revert;
   }
 
   @media ${QUERIES.desktopAndUp} {
@@ -27,7 +31,6 @@ const Overview = styled.p`
 
   @media ${QUERIES.desktopAndUp} {
     font-size: 0.875rem;
-    /* padding: 1.5rem 0; */
     padding: 0;
     line-height: 1.79;
   }

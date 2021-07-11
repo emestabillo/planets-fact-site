@@ -20,8 +20,9 @@ export const Nav = styled.nav`
     padding-bottom: 0.9375rem;
   }
 
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     flex-direction: revert;
+    align-items: flex-end;
   }
 `;
 
@@ -35,7 +36,7 @@ export const LogoLink = styled.a`
     padding-bottom: 1.875rem;
   }
 
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     flex-shrink: 0;
     padding: 0;
   }
@@ -86,7 +87,7 @@ export const NavList = styled.ul`
     overflow-y: revert;
   }
 
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     justify-content: flex-end;
 
     & > * + * {
@@ -182,9 +183,10 @@ export const PlanetLinks = styled.a`
     }
   }
 
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.laptopAndUp} {
+    padding: 0;
     &::before {
-      top: -2.025rem;
+      top: -2.5rem;
       bottom: revert;
     }
   }

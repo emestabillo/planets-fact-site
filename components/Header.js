@@ -11,6 +11,12 @@ const Wrapper = styled.header`
     grid-template-areas: "image image" "heading ." "info tabs";
     text-align: left;
   }
+
+  @media ${QUERIES.desktopAndUp} {
+    padding-top: 126px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "image image heading" "image image info" "image image tabs";
+  }
 `;
 
 function Header({ name, images, overview, structure, geology, activeTab }) {

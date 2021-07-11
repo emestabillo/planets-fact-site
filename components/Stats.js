@@ -3,7 +3,14 @@ import { QUERIES } from "../shared/constants";
 import { SRonly } from "../shared/helpers";
 
 const StatsWrapper = styled.section`
-  /* grid-area: stats; */
+  padding-top: 1.75rem;
+  text-transform: uppercase;
+
+  @media ${QUERIES.desktopAndUp} {
+    padding-top: 5.4375rem;
+    padding-bottom: 3.5rem;
+    /* text-transform: uppercase; */
+  } ;
 `;
 
 const Heading = styled.h2`
@@ -11,8 +18,8 @@ const Heading = styled.h2`
 `;
 
 const List = styled.ul`
-  padding-top: 1.75rem;
-  text-transform: uppercase;
+  /* padding-top: 1.75rem;
+  text-transform: uppercase; */
 
   & > * + * {
     margin-top: 0.5rem;
@@ -47,14 +54,24 @@ const ListItem = styled.li`
     margin-top: revert;
     flex: 1;
   }
+
+  @media ${QUERIES.desktopAndUp} {
+    font-size: 0.6875rem;
+    line-height: 2.27;
+    letter-spacing: 0.0625rem;
+  } ;
 `;
 
 const Fact = styled.span`
   font-family: var(--font-family-antonio);
   color: hsl(var(--color-white));
-  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 3vw, 2.5rem);
   line-height: 1.3;
   letter-spacing: 0.047rem;
+
+  @media ${QUERIES.desktopAndUp} {
+    letter-spacing: -0.09375rem;
+  } ;
 `;
 
 function Stats({ rotation, revolution, radius, temperature }) {

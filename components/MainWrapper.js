@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Gutters } from "../shared/helpers";
+import { QUERIES } from "../shared/constants";
 
 const Wrapper = styled.main`
   ${Gutters}
@@ -9,6 +10,14 @@ const Wrapper = styled.main`
   & > svg {
     margin: 0 auto;
     display: block;
+  }
+
+  @media ${QUERIES.desktopAndUp} {
+    /* height: calc(100vh - 5.8125rem); */
+    padding: 0 11.5vw;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
   }
 `;
 

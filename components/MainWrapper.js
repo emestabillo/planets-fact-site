@@ -13,16 +13,12 @@ const Wrapper = styled.main`
   }
 
   @media ${QUERIES.desktopAndUp} {
-    /* height: calc(100vh - 5.8125rem); */
     padding: 0 11.5vw;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
   }
 `;
 
 function MainWrapper({ children }) {
-  return <Wrapper>{children}</Wrapper>;
+  return <Wrapper id="main">{children}</Wrapper>;
 }
 
 export default MainWrapper;

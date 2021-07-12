@@ -39,8 +39,8 @@ const SmallImage = styled.div`
   position: absolute;
   bottom: ${({ name }) =>
     name === "Mercury" ? "15%" : name === "Jupiter" ? "0" : "12%"};
-  width: 98px;
-  height: 120px;
+  width: 6.125rem;
+  height: 7.5rem;
   margin: 0 auto;
   left: 0;
   right: 0;

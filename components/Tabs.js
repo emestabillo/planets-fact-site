@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { QUERIES } from "../shared/constants";
-import { baseUnderline } from "../shared/helpers";
+import { BaseUnderline } from "../shared/helpers";
 import { PlanetColors } from "../shared/helpers";
 import { Gutters } from "../shared/helpers";
 
@@ -38,7 +38,7 @@ const Tab = styled.button`
   font-weight: 700;
   opacity: ${({ activeTab }) => (activeTab ? "1" : "0.5")};
   line-height: 0.625rem;
-  ${baseUnderline}
+  ${BaseUnderline}
 
   &::before {
     background-color: ${PlanetColors};
@@ -117,6 +117,7 @@ function Tabs({ name, activeTab, setActiveTab }) {
             activeTab={activeTab === type}
             onClick={() => setActiveTab(type)}
             name={name}
+            onBlur={() => setActiveTab(buttons[0])}
           >
             <SpanNumber aria-hidden="true">{`0${index + 1}`}</SpanNumber>{" "}
             <SpanText>

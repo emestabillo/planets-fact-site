@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 
-export const baseUnderline = css`
+export const BaseUnderline = css`
   position: relative;
   transition: opacity 0.2s;
 

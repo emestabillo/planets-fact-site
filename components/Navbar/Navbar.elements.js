@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import { QUERIES } from "../../shared/constants";
-import { baseUnderline } from "../../shared/helpers";
+import { BaseUnderline } from "../../shared/helpers";
 import { Gutters } from "../../shared/helpers";
 
 export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  /* max-width: 85.625rem; */
   padding-top: 1.5625rem;
   padding-bottom: 1.5625rem;
   align-items: center;
@@ -30,7 +29,7 @@ export const LogoLink = styled.a`
   text-transform: uppercase;
   font-family: "Antonio", sans-serif;
   font-size: 1.75rem;
-  letter-spacing: -1.05px;
+  letter-spacing: -0.0656rem;
 
   @media ${QUERIES.tabletAndUp} {
     padding-bottom: 1.875rem;
@@ -98,7 +97,6 @@ export const NavList = styled.ul`
 
 export const NavItems = styled.li`
   text-transform: uppercase;
-  /* padding: 1.25rem 0; */
   transition: border-bottom 0.25s;
 
   @media ${QUERIES.tabletAndUp} {
@@ -145,7 +143,7 @@ export const PlanetLinks = styled.a`
   padding: 1.25rem 0;
   opacity: 0.75;
   transition: opacity 0.2s;
-  ${baseUnderline}
+  ${BaseUnderline}
 
   &:hover,
   &:focus {

@@ -16,9 +16,10 @@ const Wrapper = styled.header`
   }
 
   @media ${QUERIES.desktopAndUp} {
-    padding-top: 7.875rem;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "image image heading" "image image info" "image image tabs";
+    padding-top: 6.875rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "image image image heading heading" "image image image info info" "image image image tabs tabs";
+    column-gap: 3rem;
   }
 `;
 

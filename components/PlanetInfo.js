@@ -8,13 +8,9 @@ const Wrapper = styled.div`
 
   @media ${QUERIES.tabletAndUp} {
     display: grid;
-    grid-template-rows: 11.875rem auto;
+    grid-template-rows: 11.375rem auto;
     max-width: revert;
     margin: revert;
-  }
-
-  @media ${QUERIES.desktopAndUp} {
-    grid-template-rows: 12.375rem auto;
   }
 `;
 
@@ -31,7 +27,7 @@ const Overview = styled.p`
 
   @media ${QUERIES.desktopAndUp} {
     font-size: 0.875rem;
-    padding: 0;
+    padding: 0 0 2rem;
     line-height: 1.79;
   }
 `;
@@ -49,6 +45,7 @@ const Source = styled.div`
 
   @media ${QUERIES.desktopAndUp} {
     font-size: 0.875rem;
+    padding-top: 1.5rem;
   }
 
   svg {
@@ -86,7 +83,7 @@ function PlanetInfo({ activeTab, overview, structure, geology }) {
       <Overview>{planetInfo}</Overview>
       <Source>
         <span>Source : </span>
-        <WikiLink href={wikiSource}>
+        <WikiLink href={wikiSource} target="_blank">
           Wikipedia
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
             <path

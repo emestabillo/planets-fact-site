@@ -39,7 +39,8 @@ const Source = styled.div`
   transition: opacity 0.25s ease;
   pointer-events: none;
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     opacity: 1;
   }
 

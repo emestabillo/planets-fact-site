@@ -24,8 +24,8 @@ export const BaseUnderline = css`
 `;
 
 export const Gutters = css`
-  padding-left: clamp(6%, 6vw, 40rem);
-  padding-right: clamp(6%, 6vw, 40rem);
+  padding-left: clamp(6%, 6vw, 2.5rem);
+  padding-right: clamp(6%, 6vw, 2.5rem);
 `;
 
 export const PlanetSize = css`

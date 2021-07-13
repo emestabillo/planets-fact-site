@@ -2,6 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { QUERIES } from "../shared/constants";
 import { PlanetSize } from "../shared/helpers";
+import { motion } from "framer-motion";
 
 const Wrapper = styled.div`
   padding: 1.5rem 0;
@@ -21,7 +22,7 @@ const Wrapper = styled.div`
   } ;
 `;
 
-const ImageDiv = styled.div`
+const ImageDiv = styled(motion.div)`
   position: relative;
   width: ${PlanetSize};
   height: ${PlanetSize};
@@ -66,7 +67,13 @@ function PlanetImage({ name, images, activeTab }) {
   }
   return (
     <Wrapper>
-      <ImageDiv name={name}>
+      <ImageDiv
+        name={name}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        layoutId="image"
+      >
         <Image
           src={activeTab === "Geology" ? images.planet : image}
           alt={activeTab === "Geology" ? "" : alt}

@@ -119,7 +119,7 @@ function Tabs({ name, activeTab, setActiveTab }) {
             name={name}
             onBlur={() => setActiveTab(buttons[0])}
           >
-            <SpanNumber aria-hidden="true">{`0${index + 1}`}</SpanNumber>{" "}
+            <SpanNumber aria-hidden="true">{`0${index + 1}`}</SpanNumber>
             <SpanText>
               {type === "Structure"
                 ? "Internal"

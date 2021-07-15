@@ -2,7 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { QUERIES } from "../shared/constants";
 import { PlanetSize } from "../shared/helpers";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Wrapper = styled.div`
   padding: 1.5rem 0;
@@ -36,7 +36,7 @@ const ImageDiv = styled(motion.div)`
   } ;
 `;
 
-const SmallImage = styled.div`
+const SmallImage = styled(motion.div)`
   position: absolute;
   bottom: ${({ name }) =>
     name === "Mercury" ? "15%" : name === "Jupiter" ? "0" : "12%"};
@@ -67,24 +67,39 @@ function PlanetImage({ name, images, activeTab }) {
   }
   return (
     <Wrapper>
-      <ImageDiv
-        name={name}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        layoutId="image"
-      >
-        <Image
-          src={activeTab === "Geology" ? images.planet : image}
-          alt={activeTab === "Geology" ? "" : alt}
-          layout="responsive"
-          objectFit="cover"
-        />
-      </ImageDiv>
+      <AnimatePresence exitBeforeEnter>
+        <ImageDiv
+          layout
+          key={name}
+          name={name}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <Image
+            src={activeTab === "Geology" ? images.planet : image}
+            alt={activeTab === "Geology" ? "" : alt}
+            layout="responsive"
+            objectFit="cover"
+          />
+        </ImageDiv>
+      </AnimatePresence>
       {activeTab === "Geology" && (
-        <SmallImage name={name}>
-          <Image src={image} alt={alt} width={163} height={199} />
-        </SmallImage>
+        <AnimatePresence exitBeforeEnter>
+          <SmallImage
+            name={name}
+            key={name}
+            name={name}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { duration: 0.5, delay: 0.4 },
+            }}
+            exit={{ opacity: 0 }}
+          >
+            <Image src={image} alt={alt} width={163} height={199} />
+          </SmallImage>
+        </AnimatePresence>
       )}
     </Wrapper>
   );

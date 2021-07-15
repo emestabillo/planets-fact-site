@@ -4,9 +4,9 @@ import Tabs from "../components/Tabs";
 import PlanetInfo from "./PlanetInfo";
 import PlanetImage from "./PlanetImage";
 import { QUERIES } from "../shared/constants";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
-const Wrapper = styled.header`
+const Wrapper = styled(motion.header)`
   display: grid;
   grid-template-areas: "tabs" "image" "heading" "info";
 
@@ -41,32 +41,40 @@ const Heading = styled(motion.h1)`
   }
 `;
 
+const config = {
+  type: "spring",
+  damping: 20,
+  stiffness: 100,
+};
+
 function Header({ name, images, overview, structure, geology }) {
   const buttons = ["Overview", "Structure", "Geology"];
   const [activeTab, setActiveTab] = useState(buttons[0]);
 
   return (
     <Wrapper>
-      <Heading
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {
-            scale: 0.8,
-            opacity: 0,
-          },
-          visible: {
-            scale: 1,
-            opacity: 1,
-            transition: {
-              delay: 0.4,
+      <AnimatePresence>
+        <Heading
+          key={name}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {
+              scale: 0.8,
+              opacity: 0,
             },
-          },
-        }}
-        layoutId="title"
-      >
-        {name}
-      </Heading>
+            visible: {
+              scale: 1,
+              opacity: 1,
+              transition: {
+                delay: 0.4,
+              },
+            },
+          }}
+        >
+          {name}
+        </Heading>
+      </AnimatePresence>
       <PlanetImage name={name} images={images} activeTab={activeTab} />
       <PlanetInfo
         activeTab={activeTab}

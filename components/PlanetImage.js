@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { QUERIES } from "../shared/constants";
 import { PlanetSize } from "../shared/helpers";
 import { motion, AnimatePresence } from "framer-motion";
+import { item } from "./MainWrapper";
 
 const Wrapper = styled.div`
   padding: 1.5rem 0;
@@ -69,8 +70,8 @@ function PlanetImage({ name, images, activeTab }) {
     <Wrapper>
       <AnimatePresence exitBeforeEnter>
         <ImageDiv
-          layout
           key={name}
+          variants={item}
           name={name}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -83,24 +84,24 @@ function PlanetImage({ name, images, activeTab }) {
             objectFit="cover"
           />
         </ImageDiv>
+        {activeTab === "Geology" && (
+          <AnimatePresence>
+            <SmallImage
+              name={name}
+              key={name}
+              name={name}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: { duration: 0.4, delay: 0.2 },
+              }}
+              exit={{ opacity: 0 }}
+            >
+              <Image src={image} alt={alt} width={163} height={199} />
+            </SmallImage>
+          </AnimatePresence>
+        )}
       </AnimatePresence>
-      {activeTab === "Geology" && (
-        <AnimatePresence exitBeforeEnter>
-          <SmallImage
-            name={name}
-            key={name}
-            name={name}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              transition: { duration: 0.5, delay: 0.4 },
-            }}
-            exit={{ opacity: 0 }}
-          >
-            <Image src={image} alt={alt} width={163} height={199} />
-          </SmallImage>
-        </AnimatePresence>
-      )}
     </Wrapper>
   );
 }

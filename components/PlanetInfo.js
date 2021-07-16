@@ -7,8 +7,8 @@ const Wrapper = styled.div`
   margin: 0 auto;
 
   @media ${QUERIES.tabletAndUp} {
-    display: grid;
-    grid-template-rows: 11.375rem auto;
+    display: flex;
+    flex-direction: column;
     max-width: revert;
     margin: revert;
   }
@@ -21,14 +21,15 @@ const Overview = styled.p`
   order: 4;
 
   @media ${QUERIES.tabletAndUp} {
-    padding: 2rem 0 3rem;
-    min-height: 10.375rem;
+    padding: 0;
+    flex-basis: 10.375rem;
+    font-size: 0.75rem;
   }
 
   @media ${QUERIES.desktopAndUp} {
     font-size: 0.875rem;
-    padding: 0 0 2rem;
     line-height: 1.79;
+    flex-basis: 10.9375rem;
   }
 `;
 
@@ -42,6 +43,10 @@ const Source = styled.div`
   &:hover,
   &:focus-within {
     opacity: 1;
+  }
+
+  @media ${QUERIES.tabletAndUp} {
+    flex-grow: 1;
   }
 
   @media ${QUERIES.desktopAndUp} {

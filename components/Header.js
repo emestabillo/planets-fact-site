@@ -33,7 +33,7 @@ const Heading = styled(motion.h1)`
   order: 2;
 
   @media ${QUERIES.tabletAndUp} {
-    padding-bottom: revert;
+    padding-bottom: 1.5rem;
   }
 
   @media ${QUERIES.desktopAndUp} {

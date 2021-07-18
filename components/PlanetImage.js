@@ -84,24 +84,20 @@ function PlanetImage({ name, images, activeTab }) {
             objectFit="cover"
           />
         </ImageDiv>
-        {activeTab === "Geology" && (
-          <AnimatePresence>
-            <SmallImage
-              name={name}
-              key={name}
-              name={name}
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-                transition: { duration: 0.4, delay: 0.2 },
-              }}
-              exit={{ opacity: 0 }}
-            >
-              <Image src={image} alt={alt} width={163} height={199} />
-            </SmallImage>
-          </AnimatePresence>
-        )}
       </AnimatePresence>
+      {activeTab === "Geology" && (
+        <SmallImage
+          name={name}
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: { duration: 0.4, delay: 0.2 },
+          }}
+          exit={{ opacity: 0 }}
+        >
+          <Image src={image} alt={alt} width={163} height={199} />
+        </SmallImage>
+      )}
     </Wrapper>
   );
 }

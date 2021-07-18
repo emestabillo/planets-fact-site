@@ -52,8 +52,8 @@ export const PlanetSize = css`
 `;
 
 export const PlanetColors = css`
-  ${({ name }) => {
-    switch (name) {
+  ${({ name, planet }) => {
+    switch (name || planet) {
       case "Mercury":
         return "var(--color-mercury-main)";
       case "Venus":

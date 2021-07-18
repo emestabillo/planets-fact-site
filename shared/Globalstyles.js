@@ -3,7 +3,7 @@ import { COLORS } from "../shared/constants";
 
 const stars = "/background-stars.svg";
 
-const animStar = keyframes`
+const animatedBg = keyframes`
  0%{	
     background-position: 50% 30%;
  }	
@@ -34,12 +34,9 @@ body {
   color: hsl(var(--color-white));
   background-position: left 50% top 30%;
   background-image: url(${stars});
-  animation: ${animStar} 30s linear infinite;
-
- background-repeat: repeat;
-background-attachment: fixed;
- 
-animation-fill-mode: forwards;
+  animation: ${animatedBg} 30s linear infinite;
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 /* Remove list styles on ul, ol elements which suggests default styling will be removed */

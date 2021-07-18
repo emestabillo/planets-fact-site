@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
 import { QUERIES } from "../shared/constants";
 
@@ -14,7 +15,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Overview = styled.p`
+const Overview = styled(motion.p)`
   font-size: 0.6875rem;
   line-height: 2;
   padding: 0 0.5rem 2rem;
@@ -86,7 +87,28 @@ function PlanetInfo({ activeTab, overview, structure, geology }) {
   }
   return (
     <Wrapper>
-      <Overview>{planetInfo}</Overview>
+      <AnimatePresence exitBeforeEnter>
+        <Overview
+          key={activeTab}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {
+              scale: 0.8,
+              opacity: 0,
+            },
+            visible: {
+              scale: 1,
+              opacity: 1,
+              transition: {
+                delay: 0.2,
+              },
+            },
+          }}
+        >
+          {planetInfo}
+        </Overview>
+      </AnimatePresence>
       <Source>
         <span>Source : </span>
         <WikiLink href={wikiSource} target="_blank">

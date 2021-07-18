@@ -111,29 +111,27 @@ const SpanText = styled.span`
 function Tabs({ name, activeTab, setActiveTab }) {
   const buttons = ["Overview", "Structure", "Geology"];
   return (
-    <>
-      <FlexContainer>
-        {buttons.map((type, index) => (
-          <Tab
-            key={type}
-            activeTab={activeTab === type}
-            onClick={() => setActiveTab(type)}
-            name={name}
-            // onBlur={() => setActiveTab(buttons[0])}
-          >
-            <SpanNumber aria-hidden="true">{`0${index + 1} `}</SpanNumber>
-            <SpanText>
-              {type === "Structure"
-                ? "Internal"
-                : type === "Geology"
-                ? "Surface"
-                : ""}
-            </SpanText>{" "}
-            {type}
-          </Tab>
-        ))}
-      </FlexContainer>
-    </>
+    <FlexContainer>
+      {buttons.map((type, index) => (
+        <Tab
+          key={type}
+          activeTab={activeTab === type}
+          onClick={() => setActiveTab(type)}
+          name={name}
+          // onBlur={() => setActiveTab(buttons[0])}
+        >
+          <SpanNumber aria-hidden="true">{`0${index + 1} `}</SpanNumber>
+          <SpanText>
+            {type === "Structure"
+              ? "Internal"
+              : type === "Geology"
+              ? "Surface"
+              : ""}
+          </SpanText>{" "}
+          {type}
+        </Tab>
+      ))}
+    </FlexContainer>
   );
 }
 

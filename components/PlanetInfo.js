@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
 import { QUERIES } from "../shared/constants";
 
@@ -7,28 +8,29 @@ const Wrapper = styled.div`
   margin: 0 auto;
 
   @media ${QUERIES.tabletAndUp} {
-    display: grid;
-    grid-template-rows: 11.375rem auto;
+    display: flex;
+    flex-direction: column;
     max-width: revert;
     margin: revert;
   }
 `;
 
-const Overview = styled.p`
+const Overview = styled(motion.p)`
   font-size: 0.6875rem;
   line-height: 2;
   padding: 0 0.5rem 2rem;
   order: 4;
 
   @media ${QUERIES.tabletAndUp} {
-    padding: 2rem 0 3rem;
-    min-height: 10.375rem;
+    padding: 0;
+    flex-basis: 10.375rem;
+    font-size: 0.75rem;
   }
 
   @media ${QUERIES.desktopAndUp} {
     font-size: 0.875rem;
-    padding: 0 0 2rem;
     line-height: 1.79;
+    flex-basis: 10.9375rem;
   }
 `;
 
@@ -39,8 +41,13 @@ const Source = styled.div`
   transition: opacity 0.25s ease;
   pointer-events: none;
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     opacity: 1;
+  }
+
+  @media ${QUERIES.tabletAndUp} {
+    flex-grow: 1;
   }
 
   @media ${QUERIES.desktopAndUp} {
@@ -80,7 +87,28 @@ function PlanetInfo({ activeTab, overview, structure, geology }) {
   }
   return (
     <Wrapper>
-      <Overview>{planetInfo}</Overview>
+      <AnimatePresence exitBeforeEnter>
+        <Overview
+          key={activeTab}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {
+              scale: 0.8,
+              opacity: 0,
+            },
+            visible: {
+              scale: 1,
+              opacity: 1,
+              transition: {
+                delay: 0.2,
+              },
+            },
+          }}
+        >
+          {planetInfo}
+        </Overview>
+      </AnimatePresence>
       <Source>
         <span>Source : </span>
         <WikiLink href={wikiSource} target="_blank">

@@ -20,7 +20,7 @@ const SkipLinks = styled.a`
 function Layout({ children }) {
   return (
     <>
-      <SkipLinks href="#main">Skip to content</SkipLinks>
+      <SkipLinks href="#main">Skip to main content</SkipLinks>
       <Navbar />
       <MainWrapper>{children}</MainWrapper>
     </>

@@ -24,8 +24,8 @@ export const BaseUnderline = css`
 `;
 
 export const Gutters = css`
-  padding-left: clamp(6%, 6vw, 40rem);
-  padding-right: clamp(6%, 6vw, 40rem);
+  padding-left: clamp(6%, 6vw, 2.5rem);
+  padding-right: clamp(6%, 6vw, 2.5rem);
 `;
 
 export const PlanetSize = css`
@@ -52,8 +52,8 @@ export const PlanetSize = css`
 `;
 
 export const PlanetColors = css`
-  ${({ name }) => {
-    switch (name) {
+  ${({ name, planet }) => {
+    switch (name || planet) {
       case "Mercury":
         return "var(--color-mercury-main)";
       case "Venus":

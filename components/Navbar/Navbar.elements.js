@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { QUERIES } from "../../shared/constants";
 import { BaseUnderline } from "../../shared/helpers";
 import { Gutters } from "../../shared/helpers";
+import { PlanetColors } from "../../shared/helpers";
 
 export const Nav = styled.nav`
   display: flex;
@@ -158,26 +159,7 @@ export const PlanetLinks = styled.a`
     &::before {
       height: 0.25rem;
       bottom: -1rem;
-      background-color: ${({ planet }) => {
-        switch (planet) {
-          case "Mercury":
-            return "var(--color-mercury-main)";
-          case "Venus":
-            return "var(--color-venus-main)";
-          case "Earth":
-            return "var(--color-earth-main)";
-          case "Mars":
-            return "var(--color-mars-main)";
-          case "Jupiter":
-            return "var(--color-jupiter-main)";
-          case "Saturn":
-            return "var(--color-saturn-main)";
-          case "Uranus":
-            return "var(--color-uranus-main)";
-          case "Neptune":
-            return "var(--color-neptune-main)";
-        }
-      }};
+      background-color: ${PlanetColors};
     }
   }
 

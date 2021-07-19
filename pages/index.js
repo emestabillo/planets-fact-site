@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Planets!</title>
+        <title>Planets Fact Site</title>
         <meta name="description" content="facts about planets" />
       </Head>
       <Planet planet={planet} />

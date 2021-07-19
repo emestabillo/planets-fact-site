@@ -54,6 +54,7 @@ const ListItem = styled.li`
   @media ${QUERIES.tabletAndUp} {
     flex-direction: column;
     align-items: flex-start;
+    font-size: 0.625rem;
     padding: 1rem 0 1.1875rem 0.9375rem;
     margin-top: revert;
     flex: 1;

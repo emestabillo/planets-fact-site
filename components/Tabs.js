@@ -59,6 +59,7 @@ const Tab = styled.button`
   @media ${QUERIES.tabletAndUp} {
     border: 1px solid var(--color-hover);
     text-align: left;
+    font-size: 0.6875rem;
     line-height: 2.78;
     padding: 0.5rem 0 0.5rem 1.25rem;
     opacity: revert;
@@ -91,6 +92,7 @@ const SpanNumber = styled.span`
 
   @media ${QUERIES.tabletAndUp} {
     display: inline-block;
+    padding-right: 0.875rem;
   }
 
   @media ${QUERIES.desktopAndUp} {
@@ -109,29 +111,27 @@ const SpanText = styled.span`
 function Tabs({ name, activeTab, setActiveTab }) {
   const buttons = ["Overview", "Structure", "Geology"];
   return (
-    <>
-      <FlexContainer>
-        {buttons.map((type, index) => (
-          <Tab
-            key={type}
-            activeTab={activeTab === type}
-            onClick={() => setActiveTab(type)}
-            name={name}
-            onBlur={() => setActiveTab(buttons[0])}
-          >
-            <SpanNumber aria-hidden="true">{`0${index + 1}`}</SpanNumber>{" "}
-            <SpanText>
-              {type === "Structure"
-                ? "Internal"
-                : type === "Geology"
-                ? "Surface"
-                : ""}
-            </SpanText>{" "}
-            {type}
-          </Tab>
-        ))}
-      </FlexContainer>
-    </>
+    <FlexContainer>
+      {buttons.map((type, index) => (
+        <Tab
+          key={type}
+          activeTab={activeTab === type}
+          onClick={() => setActiveTab(type)}
+          name={name}
+          // onBlur={() => setActiveTab(buttons[0])}
+        >
+          <SpanNumber aria-hidden="true">{`0${index + 1} `}</SpanNumber>
+          <SpanText>
+            {type === "Structure"
+              ? "Internal"
+              : type === "Geology"
+              ? "Surface"
+              : ""}
+          </SpanText>{" "}
+          {type}
+        </Tab>
+      ))}
+    </FlexContainer>
   );
 }
 

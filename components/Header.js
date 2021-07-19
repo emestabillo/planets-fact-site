@@ -4,8 +4,9 @@ import Tabs from "../components/Tabs";
 import PlanetInfo from "./PlanetInfo";
 import PlanetImage from "./PlanetImage";
 import { QUERIES } from "../shared/constants";
+import { motion, AnimatePresence } from "framer-motion";
 
-const Wrapper = styled.header`
+const Wrapper = styled(motion.header)`
   display: grid;
   grid-template-areas: "tabs" "image" "heading" "info";
 
@@ -23,7 +24,7 @@ const Wrapper = styled.header`
   }
 `;
 
-const Heading = styled.h1`
+const Heading = styled(motion.h1)`
   grid-area: heading;
   font-family: var(--font-family-antonio);
   font-size: clamp(2.5rem, 6vw, 5rem);
@@ -32,7 +33,7 @@ const Heading = styled.h1`
   order: 2;
 
   @media ${QUERIES.tabletAndUp} {
-    padding-bottom: revert;
+    padding-bottom: 1.5rem;
   }
 
   @media ${QUERIES.desktopAndUp} {
@@ -40,14 +41,40 @@ const Heading = styled.h1`
   }
 `;
 
-const buttons = ["Overview", "Structure", "Geology"];
+const config = {
+  type: "spring",
+  damping: 20,
+  stiffness: 100,
+};
 
 function Header({ name, images, overview, structure, geology }) {
+  const buttons = ["Overview", "Structure", "Geology"];
   const [activeTab, setActiveTab] = useState(buttons[0]);
 
   return (
     <Wrapper>
-      <Heading>{name}</Heading>
+      <AnimatePresence>
+        <Heading
+          key={name}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {
+              scale: 0.8,
+              opacity: 0,
+            },
+            visible: {
+              scale: 1,
+              opacity: 1,
+              transition: {
+                delay: 0.4,
+              },
+            },
+          }}
+        >
+          {name}
+        </Heading>
+      </AnimatePresence>
       <PlanetImage name={name} images={images} activeTab={activeTab} />
       <PlanetInfo
         activeTab={activeTab}

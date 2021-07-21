@@ -48,8 +48,11 @@ const SmallImage = styled(motion.div)`
   right: 0;
 
   @media ${QUERIES.desktopAndUp} {
-    transform: scale(1.65);
-    bottom: 10%;
+    /* transform: scale(1.65); */
+    width: 162px;
+    height: 198px;
+    /* bottom: 10%; */
+    bottom: 0;
   } ;
 `;
 
@@ -88,10 +91,11 @@ function PlanetImage({ name, images, activeTab }) {
       {activeTab === "Geology" && (
         <SmallImage
           name={name}
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{
             opacity: 1,
-            transition: { duration: 0.4, delay: 0.2 },
+            y: 0,
+            transition: { duration: 0.8, delay: 0.2 },
           }}
           exit={{ opacity: 0 }}
         >

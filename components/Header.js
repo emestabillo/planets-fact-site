@@ -60,14 +60,16 @@ function Header({ name, images, overview, structure, geology }) {
           animate="visible"
           variants={{
             hidden: {
-              scale: 0.8,
               opacity: 0,
+              y: 20,
             },
             visible: {
-              scale: 1,
               opacity: 1,
+              y: 0,
               transition: {
-                delay: 0.4,
+                delay: 0.2,
+                duration: 0.8,
+                ease: "anticipate",
               },
             },
           }}

@@ -27,7 +27,9 @@ function Navbar() {
 
   return (
     <Nav>
-      <LogoLink href="/">The planets</LogoLink>
+      <Link href="/" passHref>
+        <LogoLink>The planets</LogoLink>
+      </Link>
       <MenuButton
         onClick={toggleMenu}
         aria-label="Toggle mobile menu button"

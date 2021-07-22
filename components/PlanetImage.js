@@ -48,11 +48,12 @@ const SmallImage = styled(motion.div)`
   right: 0;
 
   @media ${QUERIES.desktopAndUp} {
-    /* transform: scale(1.65); */
-    width: 162px;
-    height: 198px;
-    /* bottom: 10%; */
-    bottom: 0;
+    width: 10.125rem;
+    height: 12.375rem;
+    bottom: ${({ name }) =>
+      name === "Mercury" ? "5%" : name === "Jupiter" ? "3%" : "0"};
+    left: ${({ name }) => (name === "Mercury" || "Mars" ? "-50%" : "0")};
+    right: ${({ name }) => (name === "Mercury" || "Mars" ? "-50%" : "0")};
   } ;
 `;
 
@@ -95,7 +96,7 @@ function PlanetImage({ name, images, activeTab }) {
           animate={{
             opacity: 1,
             y: 0,
-            transition: { duration: 0.8, delay: 0.2 },
+            transition: { duration: 0.8 },
           }}
           exit={{ opacity: 0 }}
         >

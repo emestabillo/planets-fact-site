@@ -41,12 +41,6 @@ const Heading = styled(motion.h1)`
   }
 `;
 
-const config = {
-  type: "spring",
-  damping: 20,
-  stiffness: 100,
-};
-
 function Header({ name, images, overview, structure, geology }) {
   const buttons = ["Overview", "Structure", "Geology"];
   const [activeTab, setActiveTab] = useState(buttons[0]);
@@ -83,6 +77,7 @@ function Header({ name, images, overview, structure, geology }) {
         overview={overview}
         structure={structure}
         geology={geology}
+        name={name}
       />
       <Tabs
         name={name}

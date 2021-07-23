@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { QUERIES } from "../shared/constants";
 import { SRonly } from "../shared/helpers";
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 const StatsWrapper = styled.section`
   padding-top: 1.75rem;
@@ -39,7 +40,7 @@ const List = styled.ul`
   }
 `;
 
-const ListItem = styled.li`
+const Item = styled.li`
   font-size: 0.5rem;
   color: hsla(var(--color-white), 0.5);
   font-weight: 700;
@@ -68,7 +69,7 @@ const ListItem = styled.li`
   } ;
 `;
 
-const Fact = styled.span`
+const Fact = styled(motion.span)`
   font-family: var(--font-family-antonio);
   color: hsl(var(--color-white));
   font-size: clamp(1.25rem, 3vw, 2.5rem);
@@ -85,27 +86,109 @@ const Fact = styled.span`
   } ;
 `;
 
-function Stats({ rotation, revolution, radius, temperature }) {
+function Stats({ name, rotation, revolution, radius, temperature }) {
   return (
     <StatsWrapper>
       <Heading>planet statistics</Heading>
       <List>
-        <ListItem>
+        <Item>
           Rotation time
-          <Fact>{rotation}</Fact>
-        </ListItem>
-        <ListItem>
+          <AnimatePresence exitBeforeEnter>
+            <Fact
+              key={name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.5 },
+              }}
+              exit={{ opacity: 0 }}
+            >
+              {rotation}
+            </Fact>
+          </AnimatePresence>
+        </Item>
+        <Item>
           Revolution time
-          <Fact>{revolution}</Fact>
-        </ListItem>
-        <ListItem>
+          <AnimatePresence exitBeforeEnter>
+            <Fact
+              key={name}
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: 20,
+                },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 0.1,
+                    duration: 0.8,
+                    ease: "anticipate",
+                  },
+                },
+              }}
+            >
+              {revolution}
+            </Fact>
+          </AnimatePresence>
+        </Item>
+        <Item>
           Radius
-          <Fact>{radius}</Fact>
-        </ListItem>
-        <ListItem>
+          <AnimatePresence exitBeforeEnter>
+            <Fact
+              key={name}
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: 20,
+                },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 0.2,
+                    duration: 0.8,
+                    ease: "anticipate",
+                  },
+                },
+              }}
+            >
+              {radius}
+            </Fact>
+          </AnimatePresence>
+        </Item>
+        <Item>
           Average temp
-          <Fact>{temperature}</Fact>
-        </ListItem>
+          <AnimatePresence exitBeforeEnter>
+            <Fact
+              key={name}
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: 20,
+                },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 0.3,
+                    duration: 0.8,
+                    ease: "anticipate",
+                  },
+                },
+              }}
+            >
+              {temperature}
+            </Fact>
+          </AnimatePresence>
+        </Item>
       </List>
     </StatsWrapper>
   );

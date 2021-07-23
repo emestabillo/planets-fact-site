@@ -3,6 +3,7 @@ import { QUERIES } from "../shared/constants";
 import { BaseUnderline } from "../shared/helpers";
 import { PlanetColors } from "../shared/helpers";
 import { Gutters } from "../shared/helpers";
+import { motion } from "framer-motion";
 
 const FlexContainer = styled.div`
   grid-area: tabs;
@@ -28,7 +29,7 @@ const FlexContainer = styled.div`
   }
 `;
 
-const Tab = styled.button`
+const Tab = styled(motion.button)`
   color: var(--color-white);
   cursor: pointer;
   padding: 1.25rem 0;
@@ -118,6 +119,7 @@ function Tabs({ name, activeTab, setActiveTab }) {
           activeTab={activeTab === type}
           onClick={() => setActiveTab(type)}
           name={name}
+          whileTap={{ scale: 0.98 }}
           // onBlur={() => setActiveTab(buttons[0])}
         >
           <SpanNumber aria-hidden="true">{`0${index + 1} `}</SpanNumber>

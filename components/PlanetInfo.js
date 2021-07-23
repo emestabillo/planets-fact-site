@@ -71,7 +71,7 @@ const WikiLink = styled.a`
   pointer-events: auto;
 `;
 
-function PlanetInfo({ activeTab, overview, structure, geology }) {
+function PlanetInfo({ name, activeTab, overview, structure, geology }) {
   let planetInfo;
   let wikiSource;
 
@@ -86,22 +86,24 @@ function PlanetInfo({ activeTab, overview, structure, geology }) {
     wikiSource = geology.source;
   }
   return (
-    <Wrapper>
+    <Wrapper exit={{ opacity: 0 }}>
       <AnimatePresence exitBeforeEnter>
         <Overview
-          key={activeTab}
+          key={name}
           initial="hidden"
           animate="visible"
           variants={{
             hidden: {
-              scale: 0.8,
               opacity: 0,
+              y: 20,
             },
             visible: {
-              scale: 1,
               opacity: 1,
+              y: 0,
               transition: {
-                delay: 0.2,
+                delay: 0.3,
+                duration: 0.8,
+                ease: "anticipate",
               },
             },
           }}

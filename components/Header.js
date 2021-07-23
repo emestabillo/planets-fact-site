@@ -41,12 +41,6 @@ const Heading = styled(motion.h1)`
   }
 `;
 
-const config = {
-  type: "spring",
-  damping: 20,
-  stiffness: 100,
-};
-
 function Header({ name, images, overview, structure, geology }) {
   const buttons = ["Overview", "Structure", "Geology"];
   const [activeTab, setActiveTab] = useState(buttons[0]);
@@ -60,14 +54,16 @@ function Header({ name, images, overview, structure, geology }) {
           animate="visible"
           variants={{
             hidden: {
-              scale: 0.8,
               opacity: 0,
+              y: 20,
             },
             visible: {
-              scale: 1,
               opacity: 1,
+              y: 0,
               transition: {
-                delay: 0.4,
+                delay: 0.2,
+                duration: 0.8,
+                ease: "anticipate",
               },
             },
           }}
@@ -81,6 +77,7 @@ function Header({ name, images, overview, structure, geology }) {
         overview={overview}
         structure={structure}
         geology={geology}
+        name={name}
       />
       <Tabs
         name={name}

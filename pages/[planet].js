@@ -38,6 +38,7 @@ export default function Planet({ planet }) {
         active={active}
       />
       <Stats
+        name={name}
         revolution={revolution}
         temperature={temperature}
         rotation={rotation}

@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Solution preview for Planets Fact Site challenge](public/planets.gif)
+![Solution preview for Planets Fact Site challenge](.public/planets.gif)
 
 ### Links
 

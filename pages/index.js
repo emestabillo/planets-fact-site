@@ -11,7 +11,6 @@ export default function Home() {
         <title>Planets Fact Site</title>
         <meta name="description" content="facts about planets" />
       </Head>
-      <Planet planet={planet} />
     </>
   );
 }

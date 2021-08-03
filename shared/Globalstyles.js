@@ -1,15 +1,5 @@
-import { createGlobalStyle, keyframes } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { COLORS } from "../shared/constants";
-import { QUERIES } from "../shared/constants";
-
-const stars = "/background-stars.svg";
-
-const animatedBg = keyframes`
- 0%{	
-    background-position: 50% 30%;
- }	
-  100% {background-position:  0px -1000px;}
-`;
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -33,15 +23,6 @@ body {
   font-family: var(--font-family);
   background-color: var(--color-background);
   color: hsl(var(--color-white));
-  background-position: left 50% top 30%;
-  background-image: url(${stars});
- 
-
-   @media ${QUERIES.desktopAndUp} {
-    animation: ${animatedBg} 30s linear infinite;
-    background-repeat: repeat;
-    background-attachment: fixed;
-  }
 }
 
 /* Remove list styles on ul, ol elements which suggests default styling will be removed */

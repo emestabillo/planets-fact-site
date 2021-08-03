@@ -1,6 +1,34 @@
 import Navbar from "./Navbar/Navbar";
 import MainWrapper from "./MainWrapper";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const stars = "/background-stars.svg";
+
+const animatedBg = keyframes`
+ 0%{	
+    transform: translate3d(0, 0, 0);
+ }	
+  100% {
+    transform: translate3d( 0, -1200px, 0);}
+`;
+
+const Bg = styled.div`
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 3873px;
+    top: -30%;
+    left: -50%;
+    z-index: -1;
+    background-image: url(${stars});
+    animation: ${animatedBg} 30s linear infinite;
+    background-repeat: repeat;
+  }
+`;
 
 const SkipLinks = styled.a`
   background: var(--color-earth-main);
@@ -19,11 +47,11 @@ const SkipLinks = styled.a`
 
 function Layout({ children }) {
   return (
-    <>
+    <Bg>
       <SkipLinks href="#main">Skip to main content</SkipLinks>
       <Navbar />
       <MainWrapper>{children}</MainWrapper>
-    </>
+    </Bg>
   );
 }
 

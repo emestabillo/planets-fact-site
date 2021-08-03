@@ -27,7 +27,7 @@ function Navbar() {
 
   return (
     <Nav>
-      <Link href="/" passHref>
+      <Link href="/Earth" passHref>
         <LogoLink>The planets</LogoLink>
       </Link>
       <MenuButton

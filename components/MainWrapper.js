@@ -18,7 +18,7 @@ const Wrapper = styled(motion.main)`
   }
 `;
 
-const variants = {
+export const variants = {
   hidden: {
     scale: 0.8,
     opacity: 0,

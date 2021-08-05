@@ -49,7 +49,7 @@ Users should be able to:
 
 I started this project to practice React, but I soon realized I was writing the same code for every planet, since every page looks the same, and I thought there MUST be a better way. After some research - I found Nextjs. The dynamic paths seem like the solution I was looking for. That also meant a huge refactor of the entire React project.
 
-I relied heavily on the official docs and articles to get it together. I had a lot of questions in development and looking back, I should've asked for help sooner to avoid unnecessary frustration. All in all, quite proud of this project since it pushed me to add a framework to my arsenal.
+I relied heavily on the official docs and articles to get it together. I had a lot of questions in development and looking back, I should've asked for help sooner to avoid unnecessary frustration. Nevertheless, quite proud of how the project turned out since it pushed me to add a framework to my arsenal.
 
 ### Continued development
 

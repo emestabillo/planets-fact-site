@@ -18,24 +18,27 @@ const Wrapper = styled(motion.main)`
   }
 `;
 
-export const variants = {
-  hidden: {
-    scale: 0.8,
-    opacity: 0,
-  },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      delay: 0.3,
-    },
-  },
-};
-
 function MainWrapper({ children }) {
   return (
-    <Wrapper id="main" initial="hidden" animate="visible" variants={variants}>
+    <Wrapper
+      id="main"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: {
+          scale: 0.8,
+          opacity: 0,
+        },
+        visible: {
+          scale: 1,
+          opacity: 1,
+          transition: {
+            duration: 0.8,
+            delay: 0.3,
+          },
+        },
+      }}
+    >
       {children}
     </Wrapper>
   );

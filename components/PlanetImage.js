@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { QUERIES } from "../shared/constants";
 import { PlanetSize } from "../shared/helpers";
 import { motion, AnimatePresence } from "framer-motion";
-import { variants } from "./MainWrapper";
 
 const Wrapper = styled.div`
   padding: 1.5rem 0;
@@ -75,7 +74,6 @@ function PlanetImage({ name, images, activeTab }) {
       <AnimatePresence exitBeforeEnter>
         <ImageDiv
           key={name}
-          variants={variants}
           name={name}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -96,7 +94,7 @@ function PlanetImage({ name, images, activeTab }) {
           animate={{
             opacity: 1,
             y: 0,
-            transition: { duration: 0.4 },
+            transition: { duration: 0.5 },
           }}
           exit={{ opacity: 0 }}
         >

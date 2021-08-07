@@ -9,10 +9,6 @@ function MyApp({ Component, pageProps, router }) {
       <Head>
         <title>Planets Fact Site</title>
         <meta name="description" content="facts about planets" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       <GlobalStyle />
       <Layout>

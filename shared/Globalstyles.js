@@ -1,7 +1,38 @@
 import { createGlobalStyle } from "styled-components";
 import { COLORS } from "../shared/constants";
 
+const Antonio = "/fonts/antonio-regular-webfont.woff";
+const Antonio2 = "/fonts/antonio-regular-webfont.woff2";
+const SpartanBold = "/fonts/spartanmb-bold-webfont.woff";
+const SpartanBold2 = "/fonts/spartanmb-bold-webfont.woff2";
+const SpartanMed = "/fonts/spartanmb-medium-webfont.woff";
+const SpartanMed2 = "/fonts/spartanmb-medium-webfont.woff2";
+
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Antonio';
+    src: url(${Antonio2}) format('woff2'),
+    url(${Antonio}) format('woff');
+    font-weight: 500;
+    font-style: medium;
+  }
+
+  @font-face {
+    font-family: 'Spartan';
+    src: url(${SpartanMed2}) format('woff2'),
+    url(${SpartanMed}) format('woff');
+    font-weight: 400;
+    font-style: regular;
+  }
+
+  @font-face {
+    font-family: 'Spartan';
+    src: url(${SpartanBold2}) format('woff2'),
+    url(${SpartanBold}) format('woff');
+    font-weight: 700;
+    font-style: bold;
+  }
+  
 *,
 *::before,
 *::after {

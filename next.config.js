@@ -3,12 +3,11 @@ module.exports = withImages();
 
 module.exports = {
   reactStrictMode: true,
-  async redirects() {
+  async rewrites() {
     return [
       {
         source: "/",
         destination: "/Earth",
-        permanent: true,
       },
     ];
   },

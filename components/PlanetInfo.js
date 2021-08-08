@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 `;
 
 const Overview = styled(motion.p)`
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   line-height: 2;
   padding: 0 0.5rem 2rem;
   order: 4;
@@ -24,7 +24,6 @@ const Overview = styled(motion.p)`
   @media ${QUERIES.tabletAndUp} {
     padding: 0;
     flex-basis: 10.375rem;
-    font-size: 0.75rem;
   }
 
   @media ${QUERIES.desktopAndUp} {

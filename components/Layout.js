@@ -1,5 +1,6 @@
 import Navbar from "./Navbar/Navbar";
 import MainWrapper from "./MainWrapper";
+import { QUERIES } from "../shared/constants";
 import styled, { keyframes } from "styled-components";
 
 const stars = "/background-stars.svg";
@@ -25,8 +26,11 @@ const Bg = styled.div`
     left: -50%;
     z-index: -1;
     background-image: url(${stars});
-    animation: ${animatedBg} 30s linear infinite;
-    background-repeat: repeat;
+
+    @media ${QUERIES.tabletAndUp} {
+      animation: ${animatedBg} 30s linear infinite;
+      background-repeat: repeat;
+    }
   }
 `;
 

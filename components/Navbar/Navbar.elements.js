@@ -67,7 +67,7 @@ export const NavList = styled.ul`
   top: 6.8125rem;
   width: 100vw;
   overflow-y: scroll;
-  --webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
   bottom: 0;
   background-color: var(--color-background);
   padding: 0 6%;
